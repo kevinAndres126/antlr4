@@ -5,7 +5,7 @@ options {
     tokenVocab = lexerInterprete;
 }
 
-program     :(statement)*                                                        #progrstate
+program     :(statement)*                                                        #prograstate
             ;
 
 statement   : LET letStatement                                                  #statelet
