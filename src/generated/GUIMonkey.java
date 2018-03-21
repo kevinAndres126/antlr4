@@ -4,13 +4,11 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.List;
+
 
 public class GUIMonkey extends JFrame {
     private JPanel panel1;
@@ -24,7 +22,6 @@ public class GUIMonkey extends JFrame {
     private JMenuItem cargarArchivo;
     private JMenuItem guardarArchivo;
     private JMenuItem salir;
-
 
     private void createUIComponents() {
 
@@ -46,6 +43,8 @@ public class GUIMonkey extends JFrame {
         archivo.add(salir);
 
         setJMenuBar(menuBar);
+
+
 
         salir.addActionListener(new ActionListener() {
             @Override
@@ -75,6 +74,41 @@ public class GUIMonkey extends JFrame {
                 }
             }
         });
+
+        guardarArchivo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent)  {
+                //JOptionPane.showMessageDialog(null,Code.getText());
+
+
+
+                try{
+                    whenWriteStringUsingBufferedWritter_thenCorrect ();
+                }catch (Exception e){
+                    System.out.println("Error Archivo");
+                }
+
+
+
+
+
+            }
+
+            public void whenWriteStringUsingBufferedWritter_thenCorrect()
+                    throws IOException {
+                        String str = Code.getText();
+                        String fileName = JOptionPane.showInputDialog(null,"Nombre para Archivo:");
+                        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+                        writer.write(str);
+                        writer.close();
+            }
+
+
+        });
+
+
+
+
 
         Run.addActionListener(new ActionListener() {
             @Override
