@@ -1,5 +1,4 @@
 package generated;
-
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
@@ -12,8 +11,8 @@ import java.util.List;
 
 public class GUIMonkey extends JFrame {
     private JPanel panel1;
-    public JTextArea Code;
-    private JTextArea Console;
+    private JTextArea Code;
+    private JTextArea ConsoleM;
     private JButton Run;
 
 
@@ -23,11 +22,12 @@ public class GUIMonkey extends JFrame {
     private JMenuItem guardarArchivo;
     private JMenuItem salir;
 
+
     private void createUIComponents() {
 
     }
 
-    public GUIMonkey(){
+    public GUIMonkey() {
         super("Monkey");
         setContentPane(panel1);
 
@@ -43,8 +43,6 @@ public class GUIMonkey extends JFrame {
         archivo.add(salir);
 
         setJMenuBar(menuBar);
-
-
 
         salir.addActionListener(new ActionListener() {
             @Override
@@ -78,19 +76,12 @@ public class GUIMonkey extends JFrame {
         guardarArchivo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent)  {
-                //JOptionPane.showMessageDialog(null,Code.getText());
-
-
 
                 try{
                     whenWriteStringUsingBufferedWritter_thenCorrect ();
                 }catch (Exception e){
                     System.out.println("Error Archivo");
                 }
-
-
-
-
 
             }
 
@@ -112,7 +103,7 @@ public class GUIMonkey extends JFrame {
 
         Run.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(ActionEvent actionEvent)  {
                 lexerInterprete lexer = null;
                 parserInterprete parser = null;
 
@@ -120,8 +111,13 @@ public class GUIMonkey extends JFrame {
                     //CharStream input = CharStreams.fromFileName("test.txt");
                     CharStream input = CharStreams.fromString(Code.getText());
                     lexer = new lexerInterprete(input);
+                    lexer.removeErrorListeners();
+                    lexer.addErrorListener(ThrowingErrorListener.INSTANCE);
                     CommonTokenStream tokens = new CommonTokenStream(lexer);
                     parser = new parserInterprete(tokens);
+                    parser.removeErrorListeners();
+                    parser.addErrorListener(ThrowingErrorListener.INSTANCE);
+
                 }
                 catch(Exception e){System.out.println("No hay archivo");}
 
@@ -148,6 +144,11 @@ public class GUIMonkey extends JFrame {
                     System.out.println("Compilación Fallida!!");
                 }
             }
+
+
         });
+
+
     }
+
 }

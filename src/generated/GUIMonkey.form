@@ -42,7 +42,7 @@
           <verticalTextPosition value="0"/>
         </properties>
       </component>
-      <component id="caea2" class="javax.swing.JTextArea" binding="Console">
+      <component id="caea2" class="javax.swing.JTextArea" binding="ConsoleM">
         <constraints/>
         <properties>
           <columns value="80"/>
