@@ -1,5 +1,6 @@
 import generated.*;
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
 
 
 /**
@@ -13,15 +14,16 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                JFrame frame = new GUIMonkey();
+                JFrame frame = null;
+                try {
+                    frame = new GUIMonkey();
+                } catch (BadLocationException e) {
+                    e.printStackTrace();
+                }
                 frame.setSize(1000,550);
                 frame.setVisible(true);
             }
         });
-
-
-
-
 
     }
 }

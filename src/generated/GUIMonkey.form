@@ -31,12 +31,13 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="89ecc" class="javax.swing.JLabel">
+      <component id="89ecc" class="javax.swing.JLabel" binding="positionLbl">
         <constraints/>
         <properties>
           <background color="-1909016"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="11"/>
+          <preferredSize width="300" height="20"/>
           <text value="--------------------------------------------------"/>
           <verticalAlignment value="0"/>
           <verticalTextPosition value="0"/>

@@ -3,8 +3,11 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.*;
 import java.util.List;
 
@@ -14,6 +17,7 @@ public class GUIMonkey extends JFrame {
     private JTextArea Code;
     private JTextArea ConsoleM;
     private JButton Run;
+    private JLabel positionLbl;
 
 
     private JMenuBar menuBar;
@@ -27,7 +31,7 @@ public class GUIMonkey extends JFrame {
 
     }
 
-    public GUIMonkey() {
+    public GUIMonkey() throws BadLocationException {
         super("Monkey");
         setContentPane(panel1);
 
@@ -94,12 +98,7 @@ public class GUIMonkey extends JFrame {
                         writer.close();
             }
 
-
         });
-
-
-
-
 
         Run.addActionListener(new ActionListener() {
             @Override
@@ -148,6 +147,37 @@ public class GUIMonkey extends JFrame {
 
         });
 
+        Code.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                int caretpos = Code.getCaretPosition();
+                int row = 0;
+                try {
+                    row = Code.getLineOfOffset(caretpos);
+                } catch (BadLocationException e1) {
+                    e1.printStackTrace();
+                }
+
+                int column = 0;
+                try {
+                    column = caretpos - Code.getLineStartOffset(row);
+                } catch (BadLocationException e1) {
+                    e1.printStackTrace();
+                }
+
+                positionLbl.setText(String.valueOf(row + 1) + ":" + String.valueOf(column));
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
 
     }
 
