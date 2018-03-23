@@ -3,7 +3,10 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.*;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.text.BadLocationException;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -34,6 +37,7 @@ public class GUIMonkey extends JFrame {
     public GUIMonkey() throws BadLocationException {
         super("Monkey");
         setContentPane(panel1);
+        panel1.setPreferredSize(new Dimension(850,420));
 
         menuBar = new JMenuBar();
         archivo = new JMenu("Archivo");
@@ -150,22 +154,28 @@ public class GUIMonkey extends JFrame {
         Code.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-                int caretpos = Code.getCaretPosition();
-                int row = 0;
-                try {
-                    row = Code.getLineOfOffset(caretpos);
-                } catch (BadLocationException e1) {
-                    e1.printStackTrace();
-                }
+                Code.addCaretListener(new CaretListener() {
+                    @Override
+                    public void caretUpdate(CaretEvent e) {
+                        int caretpos = Code.getCaretPosition();
+                        int row = 0;
+                        try {
+                            row = Code.getLineOfOffset(caretpos);
+                        } catch (BadLocationException e1) {
+                            e1.printStackTrace();
+                        }
 
-                int column = 0;
-                try {
-                    column = caretpos - Code.getLineStartOffset(row);
-                } catch (BadLocationException e1) {
-                    e1.printStackTrace();
-                }
+                        int column = 0;
+                        try {
+                            column = caretpos - Code.getLineStartOffset(row);
+                        } catch (BadLocationException e1) {
+                            e1.printStackTrace();
+                        }
 
-                positionLbl.setText(String.valueOf(row + 1) + ":" + String.valueOf(column));
+                        positionLbl.setText(String.valueOf(row + 1) + ":" + String.valueOf(column));
+                    }
+                });
+
             }
 
             @Override
