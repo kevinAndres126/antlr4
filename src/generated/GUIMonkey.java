@@ -1,4 +1,5 @@
 package generated;
+import org.antlr.v4.gui.Trees;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
@@ -6,13 +7,16 @@ import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.text.BadLocationException;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.*;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 
 public class GUIMonkey extends JFrame {
@@ -37,7 +41,6 @@ public class GUIMonkey extends JFrame {
     public GUIMonkey() throws BadLocationException {
         super("Monkey");
         setContentPane(panel1);
-        panel1.setPreferredSize(new Dimension(850,420));
 
         menuBar = new JMenuBar();
         archivo = new JMenu("Archivo");
@@ -111,44 +114,43 @@ public class GUIMonkey extends JFrame {
                 parserInterprete parser = null;
 
                 try {
-                    //CharStream input = CharStreams.fromFileName("test.txt");
                     CharStream input = CharStreams.fromString(Code.getText());
                     lexer = new lexerInterprete(input);
+
                     lexer.removeErrorListeners();
                     lexer.addErrorListener(ThrowingErrorListener.INSTANCE);
+
                     CommonTokenStream tokens = new CommonTokenStream(lexer);
                     parser = new parserInterprete(tokens);
+
                     parser.removeErrorListeners();
                     parser.addErrorListener(ThrowingErrorListener.INSTANCE);
 
+
                 }
-                catch(Exception e){System.out.println("No hay archivo");}
+                catch(Exception e){ System.out.println("No hay archivo\n"); }
 
-                java.util.List<Token> lista = (List<Token>) lexer.getAllTokens();
-
-                for (Token t : lista)
-                    System.out.println(t.getType() + ":" + t.getText() + "\n");
-
-                lexer.reset();
 
                 try {
                     ParseTree tree = parser.program();
+                    Future<JFrame> treeGUI = Trees.inspect(tree,parser);
+
+                    treeGUI.get(40000, TimeUnit.MICROSECONDS).setVisible(true);
+
                     System.out.println("Compilación Exitosa!!\n");
 
-                    //System.out.println(tree.toStringTree(parser));
-                    //PrettyPrint printVisitor = new PrettyPrint();
-                    //printVisitor.visit(tree);
-                    //AContextual acVisitor = new AContextual();
-                    //acVisitor.visit(tree);
-                    // acVisitor.tabla.imprimir();
-
+                    List<String> errors = ThrowingErrorListener.INSTANCE.getErrorMessages();
+                    for (String e : errors) {
+                        ConsoleM.append(e.toString() + "\n");
+                    }
                 }
                 catch(RecognitionException e){
-                    System.out.println("Compilación Fallida!!");
+                    System.out.println("Compilación Fallida!!\n");
                 }
+                catch (InterruptedException e) { }
+                catch (ExecutionException e) { }
+                catch (TimeoutException e) { }
             }
-
-
         });
 
         Code.addKeyListener(new KeyListener() {

@@ -20,7 +20,7 @@ public class Main {
                 } catch (BadLocationException e) {
                     e.printStackTrace();
                 }
-                frame.setSize(1000,550);
+                frame.setSize(940,570);
                 frame.setVisible(true);
             }
         });
