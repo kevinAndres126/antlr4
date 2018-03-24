@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e284d81d-45fa-40ff-8af4-9995d1e098d0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/XD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/Main$1.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/Main$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$1.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$2.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$3.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$4.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$5$1.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$5$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$5.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/ThrowingErrorListener.class" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/ThrowingErrorListener.class" />
-      <change beforePath="$PROJECT_DIR$/patito" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/generated/GUIMonkey.java" afterPath="$PROJECT_DIR$/src/generated/GUIMonkey.java" />
-      <change beforePath="$PROJECT_DIR$/src/generated/ThrowingErrorListener.java" afterPath="$PROJECT_DIR$/src/generated/ThrowingErrorListener.java" />
-    </list>
+    <list default="true" id="e284d81d-45fa-40ff-8af4-9995d1e098d0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="293">
+              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
@@ -395,7 +379,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30948418" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30948418" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294509" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294509" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -640,16 +624,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/ThrowingErrorListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -690,6 +664,16 @@
             <element signature="class#5147:6343" expanded="false" />
             <element signature="method#keyPressed#0;class#5147:6343" expanded="false" />
             <element signature="method#keyReleased#0;class#5147:6343" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
