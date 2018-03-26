@@ -110,8 +110,9 @@ public class GUIMonkey extends JFrame {
         Run.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent)  {
-                lexerInterprete lexer = null;
+                lexerInterprete lexer;
                 parserInterprete parser = null;
+                ConsoleM.setText("");
 
                 try {
                     CharStream input = CharStreams.fromString(Code.getText());
@@ -133,20 +134,25 @@ public class GUIMonkey extends JFrame {
 
                 try {
                     ParseTree tree = parser.program();
+                    List<String> errors = ThrowingErrorListener.INSTANCE.getErrorMessages();
+
+                    if(!errors.isEmpty()) {
+                        ConsoleM.append("Compilación Fallida!!\n");
+
+                        for (String err : errors) {
+                            ConsoleM.append(err.toString() + "\n");
+                        }
+                    }
+                    else {
+                        ConsoleM.append("Compilación Exitosa!!\n");
+                    }
+
                     Future<JFrame> treeGUI = Trees.inspect(tree,parser);
 
                     treeGUI.get(40000, TimeUnit.MICROSECONDS).setVisible(true);
 
-                    System.out.println("Compilación Exitosa!!\n");
-
-                    List<String> errors = ThrowingErrorListener.INSTANCE.getErrorMessages();
-                    for (String e : errors) {
-                        ConsoleM.append(e.toString() + "\n");
-                    }
                 }
-                catch(RecognitionException e){
-                    System.out.println("Compilación Fallida!!\n");
-                }
+                catch(RecognitionException e){ }
                 catch (InterruptedException e) { }
                 catch (ExecutionException e) { }
                 catch (TimeoutException e) { }
@@ -159,22 +165,18 @@ public class GUIMonkey extends JFrame {
                 Code.addCaretListener(new CaretListener() {
                     @Override
                     public void caretUpdate(CaretEvent e) {
-                        int caretpos = Code.getCaretPosition();
+                        int pos = Code.getCaretPosition();
                         int row = 0;
                         try {
-                            row = Code.getLineOfOffset(caretpos);
-                        } catch (BadLocationException e1) {
-                            e1.printStackTrace();
-                        }
+                            row = Code.getLineOfOffset(pos);
+                        } catch (BadLocationException e1) { }
 
                         int column = 0;
                         try {
-                            column = caretpos - Code.getLineStartOffset(row);
-                        } catch (BadLocationException e1) {
-                            e1.printStackTrace();
-                        }
+                            column = pos - Code.getLineStartOffset(row);
+                        } catch (BadLocationException e1) { }
 
-                        positionLbl.setText(String.valueOf(row + 1) + ":" + String.valueOf(column));
+                        positionLbl.setText(String.valueOf(row + 1) + ":" + String.valueOf(column - 1));
                     }
                 });
 
