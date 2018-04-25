@@ -22,6 +22,7 @@ public class Main {
                 }
                 frame.setSize(940,570);
                 frame.setVisible(true);
+
             }
         });
 

@@ -49,7 +49,7 @@
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="11"/>
           <preferredSize width="300" height="20"/>
-          <text value="1:0"/>
+          <text value="Posición =&gt; 1:0"/>
           <verticalAlignment value="0"/>
           <verticalTextPosition value="0"/>
         </properties>

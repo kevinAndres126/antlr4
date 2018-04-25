@@ -6,11 +6,10 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.text.BadLocationException;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.io.*;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -32,6 +31,8 @@ public class GUIMonkey extends JFrame {
     private JMenuItem cargarArchivo;
     private JMenuItem guardarArchivo;
     private JMenuItem salir;
+
+    private static String ultimaDireccion = null;
 
 
     private void createUIComponents() {
@@ -55,20 +56,18 @@ public class GUIMonkey extends JFrame {
 
         setJMenuBar(menuBar);
 
-        salir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                dispose();
-                System.exit(0);
-            }
+        salir.addActionListener(actionEvent -> {
+            dispose();
+            System.exit(0);
         });
 
-        cargarArchivo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                JFileChooser chooser = new JFileChooser();
-                chooser.showOpenDialog(null);
-                File f = chooser.getSelectedFile();
+        cargarArchivo.addActionListener(actionEvent -> {
+
+            JFileChooser fc = getFileChooser();
+            int returnVal = fc.showOpenDialog(null);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                setUltimaDireccion(fc.getSelectedFile());
+                File f = fc.getSelectedFile();
                 String filename = f.getAbsolutePath();
 
                 try{
@@ -82,6 +81,7 @@ public class GUIMonkey extends JFrame {
                     JOptionPane.showMessageDialog(null,e);
                 }
             }
+
         });
 
         guardarArchivo.addActionListener(new ActionListener() {
@@ -107,77 +107,22 @@ public class GUIMonkey extends JFrame {
 
         });
 
-        Run.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent)  {
-                lexerInterprete lexer;
-                parserInterprete parser = null;
-                ConsoleM.setText("");
-
-                try {
-                    CharStream input = CharStreams.fromString(Code.getText());
-                    lexer = new lexerInterprete(input);
-
-                    lexer.removeErrorListeners();
-                    lexer.addErrorListener(ThrowingErrorListener.INSTANCE);
-
-                    CommonTokenStream tokens = new CommonTokenStream(lexer);
-                    parser = new parserInterprete(tokens);
-
-                    parser.removeErrorListeners();
-                    parser.addErrorListener(ThrowingErrorListener.INSTANCE);
-
-
-                }
-                catch(Exception e){ System.out.println("No hay archivo\n"); }
-
-
-                try {
-                    ParseTree tree = parser.program();
-                    List<String> errors = ThrowingErrorListener.INSTANCE.getErrorMessages();
-
-                    if(!errors.isEmpty()) {
-                        ConsoleM.append("Compilación Fallida!!\n");
-
-                        for (String err : errors) {
-                            ConsoleM.append(err.toString() + "\n");
-                        }
-                    }
-                    else {
-                        ConsoleM.append("Compilación Exitosa!!\n");
-                    }
-
-                    Future<JFrame> treeGUI = Trees.inspect(tree,parser);
-
-                    treeGUI.get(40000, TimeUnit.MICROSECONDS).setVisible(true);
-
-                }
-                catch(RecognitionException e){ }
-                catch (InterruptedException e) { }
-                catch (ExecutionException e) { }
-                catch (TimeoutException e) { }
-            }
-        });
-
         Code.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-                Code.addCaretListener(new CaretListener() {
-                    @Override
-                    public void caretUpdate(CaretEvent e) {
-                        int pos = Code.getCaretPosition();
-                        int row = 0;
-                        try {
-                            row = Code.getLineOfOffset(pos);
-                        } catch (BadLocationException e1) { }
+                Code.addCaretListener(e12 -> {
+                    int pos = Code.getCaretPosition();
+                    int row = 0;
+                    try {
+                        row = Code.getLineOfOffset(pos);
+                    } catch (BadLocationException e1) { }
 
-                        int column = 0;
-                        try {
-                            column = pos - Code.getLineStartOffset(row);
-                        } catch (BadLocationException e1) { }
+                    int column = 0;
+                    try {
+                        column = pos - Code.getLineStartOffset(row);
+                    } catch (BadLocationException e1) { }
 
-                        positionLbl.setText(String.valueOf(row + 1) + ":" + String.valueOf(column - 1));
-                    }
+                    positionLbl.setText("Posición  => " + String.valueOf(row + 1) + ":" + String.valueOf(column));
                 });
 
             }
@@ -193,6 +138,115 @@ public class GUIMonkey extends JFrame {
             }
         });
 
+        Code.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Code.addCaretListener(e13 -> {
+                    int pos = Code.getCaretPosition();
+                    int row = 0;
+                    try {
+                        row = Code.getLineOfOffset(pos);
+                    } catch (BadLocationException e1) { }
+
+                    int column = 0;
+                    try {
+                        column = pos - Code.getLineStartOffset(row);
+                    } catch (BadLocationException e1) { }
+
+                    positionLbl.setText("Posición => " + String.valueOf(row + 1) + ":" + String.valueOf(column));
+                });
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
+        Run.addActionListener(e -> {
+
+            ConsoleM.setText("");
+
+            lexerInterprete lexer;
+            parserInterprete parser = null;
+            CharStream input = null;
+            ParseTree tree;
+
+            try {
+                input = CharStreams.fromString(Code.getText());
+            }catch (Exception ex) {
+                System.out.println("No hay archivo\n");
+            }
+
+            lexer = new lexerInterprete(input);
+
+            lexer.removeErrorListeners();
+            lexer.addErrorListener(ThrowingErrorListener.INSTANCE);
+
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            parser = new parserInterprete(tokens);
+
+            parser.removeErrorListeners();
+            parser.addErrorListener(ThrowingErrorListener.INSTANCE);
+
+            tree = parser.program();
+            List<String> errors = ThrowingErrorListener.INSTANCE.getErrorMessages();
+
+            if(errors.isEmpty()) {
+                ConsoleM.append("Compilación Exitosa!!\n");
+            }
+            else if(!errors.isEmpty()){
+                ConsoleM.append("Compilación Fallida!!\n");
+
+                for (String err : errors) {
+                    ConsoleM.append(err + "\n");
+                }
+            }
+
+            Future<JFrame> treeGUI = Trees.inspect(tree,parser);
+
+            try {
+                treeGUI.get(50000, TimeUnit.MICROSECONDS).setVisible(true);
+            }
+            catch (InterruptedException e1) { }
+            catch (ExecutionException e1) { }
+            catch (TimeoutException e1) { }
+
+            errors.clear();
+
+        });
+
+
+
+    }
+
+    public static JFileChooser getFileChooser() {
+        if(ultimaDireccion != null) {
+            JFileChooser fileChooser = new JFileChooser(ultimaDireccion);
+            return fileChooser;
+        } else {
+            JFileChooser fileChooser = new JFileChooser();
+            return fileChooser;
+        }
+    }
+
+    public static void setUltimaDireccion(File archivo) {
+        ultimaDireccion = archivo.getParent();
     }
 
 }
