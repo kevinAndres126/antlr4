@@ -1,4 +1,4 @@
-// Generated from /home/kevin/Escritorio/Compiladores/prograAntrl4/src/parserInterprete.g4 by ANTLR 4.7
+// Generated from /home/kevin/Documents/Compiladores/PrograCompi2/2.0/antlr4/src/parserInterprete.g4 by ANTLR 4.7
 package generated;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -8,283 +8,555 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface parserInterpreteListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#program}.
+	 * Enter a parse tree produced by the {@code prograstate}
+	 * labeled alternative in {@link parserInterprete#program}.
 	 * @param ctx the parse tree
 	 */
-	void enterProgram(parserInterprete.ProgramContext ctx);
+	void enterPrograstate(parserInterprete.PrograstateContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#program}.
+	 * Exit a parse tree produced by the {@code prograstate}
+	 * labeled alternative in {@link parserInterprete#program}.
 	 * @param ctx the parse tree
 	 */
-	void exitProgram(parserInterprete.ProgramContext ctx);
+	void exitPrograstate(parserInterprete.PrograstateContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#statement}.
+	 * Enter a parse tree produced by the {@code statelet}
+	 * labeled alternative in {@link parserInterprete#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterStatement(parserInterprete.StatementContext ctx);
+	void enterStatelet(parserInterprete.StateletContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#statement}.
+	 * Exit a parse tree produced by the {@code statelet}
+	 * labeled alternative in {@link parserInterprete#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitStatement(parserInterprete.StatementContext ctx);
+	void exitStatelet(parserInterprete.StateletContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#letStatement}.
+	 * Enter a parse tree produced by the {@code statereturn}
+	 * labeled alternative in {@link parserInterprete#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterLetStatement(parserInterprete.LetStatementContext ctx);
+	void enterStatereturn(parserInterprete.StatereturnContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#letStatement}.
+	 * Exit a parse tree produced by the {@code statereturn}
+	 * labeled alternative in {@link parserInterprete#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitLetStatement(parserInterprete.LetStatementContext ctx);
+	void exitStatereturn(parserInterprete.StatereturnContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#returnStatement}.
+	 * Enter a parse tree produced by the {@code stateexpre}
+	 * labeled alternative in {@link parserInterprete#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterReturnStatement(parserInterprete.ReturnStatementContext ctx);
+	void enterStateexpre(parserInterprete.StateexpreContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#returnStatement}.
+	 * Exit a parse tree produced by the {@code stateexpre}
+	 * labeled alternative in {@link parserInterprete#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitReturnStatement(parserInterprete.ReturnStatementContext ctx);
+	void exitStateexpre(parserInterprete.StateexpreContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#expressionStatement}.
+	 * Enter a parse tree produced by the {@code stateletRule}
+	 * labeled alternative in {@link parserInterprete#letStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressionStatement(parserInterprete.ExpressionStatementContext ctx);
+	void enterStateletRule(parserInterprete.StateletRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#expressionStatement}.
+	 * Exit a parse tree produced by the {@code stateletRule}
+	 * labeled alternative in {@link parserInterprete#letStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressionStatement(parserInterprete.ExpressionStatementContext ctx);
+	void exitStateletRule(parserInterprete.StateletRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#expression}.
+	 * Enter a parse tree produced by the {@code statereturnRule}
+	 * labeled alternative in {@link parserInterprete#returnStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpression(parserInterprete.ExpressionContext ctx);
+	void enterStatereturnRule(parserInterprete.StatereturnRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#expression}.
+	 * Exit a parse tree produced by the {@code statereturnRule}
+	 * labeled alternative in {@link parserInterprete#returnStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpression(parserInterprete.ExpressionContext ctx);
+	void exitStatereturnRule(parserInterprete.StatereturnRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#comparison}.
+	 * Enter a parse tree produced by the {@code stateexpreRule}
+	 * labeled alternative in {@link parserInterprete#expressionStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterComparison(parserInterprete.ComparisonContext ctx);
+	void enterStateexpreRule(parserInterprete.StateexpreRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#comparison}.
+	 * Exit a parse tree produced by the {@code stateexpreRule}
+	 * labeled alternative in {@link parserInterprete#expressionStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitComparison(parserInterprete.ComparisonContext ctx);
+	void exitStateexpreRule(parserInterprete.StateexpreRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#additionExpression}.
+	 * Enter a parse tree produced by the {@code expreRule}
+	 * labeled alternative in {@link parserInterprete#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterAdditionExpression(parserInterprete.AdditionExpressionContext ctx);
+	void enterExpreRule(parserInterprete.ExpreRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#additionExpression}.
+	 * Exit a parse tree produced by the {@code expreRule}
+	 * labeled alternative in {@link parserInterprete#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitAdditionExpression(parserInterprete.AdditionExpressionContext ctx);
+	void exitExpreRule(parserInterprete.ExpreRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#additionFactor}.
+	 * Enter a parse tree produced by the {@code comparRule}
+	 * labeled alternative in {@link parserInterprete#comparison}.
 	 * @param ctx the parse tree
 	 */
-	void enterAdditionFactor(parserInterprete.AdditionFactorContext ctx);
+	void enterComparRule(parserInterprete.ComparRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#additionFactor}.
+	 * Exit a parse tree produced by the {@code comparRule}
+	 * labeled alternative in {@link parserInterprete#comparison}.
 	 * @param ctx the parse tree
 	 */
-	void exitAdditionFactor(parserInterprete.AdditionFactorContext ctx);
+	void exitComparRule(parserInterprete.ComparRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#multiplicationExpression}.
+	 * Enter a parse tree produced by the {@code addExpreRule}
+	 * labeled alternative in {@link parserInterprete#additionExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterMultiplicationExpression(parserInterprete.MultiplicationExpressionContext ctx);
+	void enterAddExpreRule(parserInterprete.AddExpreRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#multiplicationExpression}.
+	 * Exit a parse tree produced by the {@code addExpreRule}
+	 * labeled alternative in {@link parserInterprete#additionExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitMultiplicationExpression(parserInterprete.MultiplicationExpressionContext ctx);
+	void exitAddExpreRule(parserInterprete.AddExpreRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#multiplicationFactor}.
+	 * Enter a parse tree produced by the {@code addFactRule}
+	 * labeled alternative in {@link parserInterprete#additionFactor}.
 	 * @param ctx the parse tree
 	 */
-	void enterMultiplicationFactor(parserInterprete.MultiplicationFactorContext ctx);
+	void enterAddFactRule(parserInterprete.AddFactRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#multiplicationFactor}.
+	 * Exit a parse tree produced by the {@code addFactRule}
+	 * labeled alternative in {@link parserInterprete#additionFactor}.
 	 * @param ctx the parse tree
 	 */
-	void exitMultiplicationFactor(parserInterprete.MultiplicationFactorContext ctx);
+	void exitAddFactRule(parserInterprete.AddFactRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#elementExpression}.
+	 * Enter a parse tree produced by the {@code multiExpresRule}
+	 * labeled alternative in {@link parserInterprete#multiplicationExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterElementExpression(parserInterprete.ElementExpressionContext ctx);
+	void enterMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#elementExpression}.
+	 * Exit a parse tree produced by the {@code multiExpresRule}
+	 * labeled alternative in {@link parserInterprete#multiplicationExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitElementExpression(parserInterprete.ElementExpressionContext ctx);
+	void exitMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#elementAccess}.
+	 * Enter a parse tree produced by the {@code multiFactRule}
+	 * labeled alternative in {@link parserInterprete#multiplicationFactor}.
 	 * @param ctx the parse tree
 	 */
-	void enterElementAccess(parserInterprete.ElementAccessContext ctx);
+	void enterMultiFactRule(parserInterprete.MultiFactRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#elementAccess}.
+	 * Exit a parse tree produced by the {@code multiFactRule}
+	 * labeled alternative in {@link parserInterprete#multiplicationFactor}.
 	 * @param ctx the parse tree
 	 */
-	void exitElementAccess(parserInterprete.ElementAccessContext ctx);
+	void exitMultiFactRule(parserInterprete.MultiFactRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#callExpression}.
+	 * Enter a parse tree produced by the {@code elemExpreRule}
+	 * labeled alternative in {@link parserInterprete#elementExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterCallExpression(parserInterprete.CallExpressionContext ctx);
+	void enterElemExpreRule(parserInterprete.ElemExpreRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#callExpression}.
+	 * Exit a parse tree produced by the {@code elemExpreRule}
+	 * labeled alternative in {@link parserInterprete#elementExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitCallExpression(parserInterprete.CallExpressionContext ctx);
+	void exitElemExpreRule(parserInterprete.ElemExpreRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#primitiveExpression}.
+	 * Enter a parse tree produced by the {@code elemAccesRule}
+	 * labeled alternative in {@link parserInterprete#elementAccess}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimitiveExpression(parserInterprete.PrimitiveExpressionContext ctx);
+	void enterElemAccesRule(parserInterprete.ElemAccesRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#primitiveExpression}.
+	 * Exit a parse tree produced by the {@code elemAccesRule}
+	 * labeled alternative in {@link parserInterprete#elementAccess}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimitiveExpression(parserInterprete.PrimitiveExpressionContext ctx);
+	void exitElemAccesRule(parserInterprete.ElemAccesRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#arrayFunctions}.
+	 * Enter a parse tree produced by the {@code callExpreRule}
+	 * labeled alternative in {@link parserInterprete#callExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterArrayFunctions(parserInterprete.ArrayFunctionsContext ctx);
+	void enterCallExpreRule(parserInterprete.CallExpreRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#arrayFunctions}.
+	 * Exit a parse tree produced by the {@code callExpreRule}
+	 * labeled alternative in {@link parserInterprete#callExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitArrayFunctions(parserInterprete.ArrayFunctionsContext ctx);
+	void exitCallExpreRule(parserInterprete.CallExpreRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#arrayLiteral}.
+	 * Enter a parse tree produced by the {@code primiExpreInt}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterArrayLiteral(parserInterprete.ArrayLiteralContext ctx);
+	void enterPrimiExpreInt(parserInterprete.PrimiExpreIntContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#arrayLiteral}.
+	 * Exit a parse tree produced by the {@code primiExpreInt}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitArrayLiteral(parserInterprete.ArrayLiteralContext ctx);
+	void exitPrimiExpreInt(parserInterprete.PrimiExpreIntContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#functionLiteral}.
+	 * Enter a parse tree produced by the {@code primiExpreStr}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunctionLiteral(parserInterprete.FunctionLiteralContext ctx);
+	void enterPrimiExpreStr(parserInterprete.PrimiExpreStrContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#functionLiteral}.
+	 * Exit a parse tree produced by the {@code primiExpreStr}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunctionLiteral(parserInterprete.FunctionLiteralContext ctx);
+	void exitPrimiExpreStr(parserInterprete.PrimiExpreStrContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#functionParameters}.
+	 * Enter a parse tree produced by the {@code primiExpreIdent}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunctionParameters(parserInterprete.FunctionParametersContext ctx);
+	void enterPrimiExpreIdent(parserInterprete.PrimiExpreIdentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#functionParameters}.
+	 * Exit a parse tree produced by the {@code primiExpreIdent}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunctionParameters(parserInterprete.FunctionParametersContext ctx);
+	void exitPrimiExpreIdent(parserInterprete.PrimiExpreIdentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#moreIdentifiers}.
+	 * Enter a parse tree produced by the {@code primiExpreTrue}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterMoreIdentifiers(parserInterprete.MoreIdentifiersContext ctx);
+	void enterPrimiExpreTrue(parserInterprete.PrimiExpreTrueContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#moreIdentifiers}.
+	 * Exit a parse tree produced by the {@code primiExpreTrue}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitMoreIdentifiers(parserInterprete.MoreIdentifiersContext ctx);
+	void exitPrimiExpreTrue(parserInterprete.PrimiExpreTrueContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#hashLiteral}.
+	 * Enter a parse tree produced by the {@code primiExpreFalse}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterHashLiteral(parserInterprete.HashLiteralContext ctx);
+	void enterPrimiExpreFalse(parserInterprete.PrimiExpreFalseContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#hashLiteral}.
+	 * Exit a parse tree produced by the {@code primiExpreFalse}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitHashLiteral(parserInterprete.HashLiteralContext ctx);
+	void exitPrimiExpreFalse(parserInterprete.PrimiExpreFalseContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#hashContent}.
+	 * Enter a parse tree produced by the {@code primiExpreExpres}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterHashContent(parserInterprete.HashContentContext ctx);
+	void enterPrimiExpreExpres(parserInterprete.PrimiExpreExpresContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#hashContent}.
+	 * Exit a parse tree produced by the {@code primiExpreExpres}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitHashContent(parserInterprete.HashContentContext ctx);
+	void exitPrimiExpreExpres(parserInterprete.PrimiExpreExpresContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#moreHashContent}.
+	 * Enter a parse tree produced by the {@code primiExpresArrayliteral}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterMoreHashContent(parserInterprete.MoreHashContentContext ctx);
+	void enterPrimiExpresArrayliteral(parserInterprete.PrimiExpresArrayliteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#moreHashContent}.
+	 * Exit a parse tree produced by the {@code primiExpresArrayliteral}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitMoreHashContent(parserInterprete.MoreHashContentContext ctx);
+	void exitPrimiExpresArrayliteral(parserInterprete.PrimiExpresArrayliteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#expressionList}.
+	 * Enter a parse tree produced by the {@code primiExpreArrayFuntions}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressionList(parserInterprete.ExpressionListContext ctx);
+	void enterPrimiExpreArrayFuntions(parserInterprete.PrimiExpreArrayFuntionsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#expressionList}.
+	 * Exit a parse tree produced by the {@code primiExpreArrayFuntions}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressionList(parserInterprete.ExpressionListContext ctx);
+	void exitPrimiExpreArrayFuntions(parserInterprete.PrimiExpreArrayFuntionsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#moreExpressions}.
+	 * Enter a parse tree produced by the {@code primiExpreFuntionLiteral}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterMoreExpressions(parserInterprete.MoreExpressionsContext ctx);
+	void enterPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#moreExpressions}.
+	 * Exit a parse tree produced by the {@code primiExpreFuntionLiteral}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitMoreExpressions(parserInterprete.MoreExpressionsContext ctx);
+	void exitPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#printExpression}.
+	 * Enter a parse tree produced by the {@code primiExpreHash}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrintExpression(parserInterprete.PrintExpressionContext ctx);
+	void enterPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#printExpression}.
+	 * Exit a parse tree produced by the {@code primiExpreHash}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrintExpression(parserInterprete.PrintExpressionContext ctx);
+	void exitPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#ifExpression}.
+	 * Enter a parse tree produced by the {@code primiExprePrint}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterIfExpression(parserInterprete.IfExpressionContext ctx);
+	void enterPrimiExprePrint(parserInterprete.PrimiExprePrintContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#ifExpression}.
+	 * Exit a parse tree produced by the {@code primiExprePrint}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitIfExpression(parserInterprete.IfExpressionContext ctx);
+	void exitPrimiExprePrint(parserInterprete.PrimiExprePrintContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link parserInterprete#blockStatement}.
+	 * Enter a parse tree produced by the {@code primiExpreIf}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterBlockStatement(parserInterprete.BlockStatementContext ctx);
+	void enterPrimiExpreIf(parserInterprete.PrimiExpreIfContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link parserInterprete#blockStatement}.
+	 * Exit a parse tree produced by the {@code primiExpreIf}
+	 * labeled alternative in {@link parserInterprete#primitiveExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitBlockStatement(parserInterprete.BlockStatementContext ctx);
+	void exitPrimiExpreIf(parserInterprete.PrimiExpreIfContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayFunLen}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayFunLen(parserInterprete.ArrayFunLenContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayFunLen}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayFunLen(parserInterprete.ArrayFunLenContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayFunFist}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayFunFist(parserInterprete.ArrayFunFistContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayFunFist}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayFunFist(parserInterprete.ArrayFunFistContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayFunLast}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayFunLast(parserInterprete.ArrayFunLastContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayFunLast}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayFunLast(parserInterprete.ArrayFunLastContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayFunRest}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayFunRest(parserInterprete.ArrayFunRestContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayFunRest}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayFunRest(parserInterprete.ArrayFunRestContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayFunPush}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayFunPush(parserInterprete.ArrayFunPushContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayFunPush}
+	 * labeled alternative in {@link parserInterprete#arrayFunctions}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayFunPush(parserInterprete.ArrayFunPushContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayLiteralRule}
+	 * labeled alternative in {@link parserInterprete#arrayLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayLiteralRule(parserInterprete.ArrayLiteralRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayLiteralRule}
+	 * labeled alternative in {@link parserInterprete#arrayLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayLiteralRule(parserInterprete.ArrayLiteralRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code funLiteralRule}
+	 * labeled alternative in {@link parserInterprete#functionLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code funLiteralRule}
+	 * labeled alternative in {@link parserInterprete#functionLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code funParametersRule}
+	 * labeled alternative in {@link parserInterprete#functionParameters}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunParametersRule(parserInterprete.FunParametersRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code funParametersRule}
+	 * labeled alternative in {@link parserInterprete#functionParameters}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunParametersRule(parserInterprete.FunParametersRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code moreIdentsRule}
+	 * labeled alternative in {@link parserInterprete#moreIdentifiers}.
+	 * @param ctx the parse tree
+	 */
+	void enterMoreIdentsRule(parserInterprete.MoreIdentsRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code moreIdentsRule}
+	 * labeled alternative in {@link parserInterprete#moreIdentifiers}.
+	 * @param ctx the parse tree
+	 */
+	void exitMoreIdentsRule(parserInterprete.MoreIdentsRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code hashLiteralRule}
+	 * labeled alternative in {@link parserInterprete#hashLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterHashLiteralRule(parserInterprete.HashLiteralRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code hashLiteralRule}
+	 * labeled alternative in {@link parserInterprete#hashLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitHashLiteralRule(parserInterprete.HashLiteralRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code hashContRule}
+	 * labeled alternative in {@link parserInterprete#hashContent}.
+	 * @param ctx the parse tree
+	 */
+	void enterHashContRule(parserInterprete.HashContRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code hashContRule}
+	 * labeled alternative in {@link parserInterprete#hashContent}.
+	 * @param ctx the parse tree
+	 */
+	void exitHashContRule(parserInterprete.HashContRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code moreHashContRule}
+	 * labeled alternative in {@link parserInterprete#moreHashContent}.
+	 * @param ctx the parse tree
+	 */
+	void enterMoreHashContRule(parserInterprete.MoreHashContRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code moreHashContRule}
+	 * labeled alternative in {@link parserInterprete#moreHashContent}.
+	 * @param ctx the parse tree
+	 */
+	void exitMoreHashContRule(parserInterprete.MoreHashContRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code expreListExpre}
+	 * labeled alternative in {@link parserInterprete#expressionList}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpreListExpre(parserInterprete.ExpreListExpreContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code expreListExpre}
+	 * labeled alternative in {@link parserInterprete#expressionList}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpreListExpre(parserInterprete.ExpreListExpreContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code expreListEOF}
+	 * labeled alternative in {@link parserInterprete#expressionList}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpreListEOF(parserInterprete.ExpreListEOFContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code expreListEOF}
+	 * labeled alternative in {@link parserInterprete#expressionList}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpreListEOF(parserInterprete.ExpreListEOFContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code moreExpreRule}
+	 * labeled alternative in {@link parserInterprete#moreExpressions}.
+	 * @param ctx the parse tree
+	 */
+	void enterMoreExpreRule(parserInterprete.MoreExpreRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code moreExpreRule}
+	 * labeled alternative in {@link parserInterprete#moreExpressions}.
+	 * @param ctx the parse tree
+	 */
+	void exitMoreExpreRule(parserInterprete.MoreExpreRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code printExpreRule}
+	 * labeled alternative in {@link parserInterprete#printExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrintExpreRule(parserInterprete.PrintExpreRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code printExpreRule}
+	 * labeled alternative in {@link parserInterprete#printExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrintExpreRule(parserInterprete.PrintExpreRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ifExpreRule}
+	 * labeled alternative in {@link parserInterprete#ifExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfExpreRule(parserInterprete.IfExpreRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ifExpreRule}
+	 * labeled alternative in {@link parserInterprete#ifExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfExpreRule(parserInterprete.IfExpreRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code blockStatRule}
+	 * labeled alternative in {@link parserInterprete#blockStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlockStatRule(parserInterprete.BlockStatRuleContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code blockStatRule}
+	 * labeled alternative in {@link parserInterprete#blockStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlockStatRule(parserInterprete.BlockStatRuleContext ctx);
 }

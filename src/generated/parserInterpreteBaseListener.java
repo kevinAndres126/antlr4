@@ -1,4 +1,4 @@
-// Generated from /home/kevin/Escritorio/Compiladores/prograAntrl4/src/parserInterprete.g4 by ANTLR 4.7
+// Generated from /home/kevin/Documents/Compiladores/PrograCompi2/2.0/antlr4/src/parserInterprete.g4 by ANTLR 4.7
 package generated;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -16,337 +16,553 @@ public class parserInterpreteBaseListener implements parserInterpreteListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(parserInterprete.ProgramContext ctx) { }
+	@Override public void enterPrograstate(parserInterprete.PrograstateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProgram(parserInterprete.ProgramContext ctx) { }
+	@Override public void exitPrograstate(parserInterprete.PrograstateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(parserInterprete.StatementContext ctx) { }
+	@Override public void enterStatelet(parserInterprete.StateletContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatement(parserInterprete.StatementContext ctx) { }
+	@Override public void exitStatelet(parserInterprete.StateletContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLetStatement(parserInterprete.LetStatementContext ctx) { }
+	@Override public void enterStatereturn(parserInterprete.StatereturnContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLetStatement(parserInterprete.LetStatementContext ctx) { }
+	@Override public void exitStatereturn(parserInterprete.StatereturnContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturnStatement(parserInterprete.ReturnStatementContext ctx) { }
+	@Override public void enterStateexpre(parserInterprete.StateexpreContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturnStatement(parserInterprete.ReturnStatementContext ctx) { }
+	@Override public void exitStateexpre(parserInterprete.StateexpreContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressionStatement(parserInterprete.ExpressionStatementContext ctx) { }
+	@Override public void enterStateletRule(parserInterprete.StateletRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressionStatement(parserInterprete.ExpressionStatementContext ctx) { }
+	@Override public void exitStateletRule(parserInterprete.StateletRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpression(parserInterprete.ExpressionContext ctx) { }
+	@Override public void enterStatereturnRule(parserInterprete.StatereturnRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpression(parserInterprete.ExpressionContext ctx) { }
+	@Override public void exitStatereturnRule(parserInterprete.StatereturnRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparison(parserInterprete.ComparisonContext ctx) { }
+	@Override public void enterStateexpreRule(parserInterprete.StateexpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparison(parserInterprete.ComparisonContext ctx) { }
+	@Override public void exitStateexpreRule(parserInterprete.StateexpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAdditionExpression(parserInterprete.AdditionExpressionContext ctx) { }
+	@Override public void enterExpreRule(parserInterprete.ExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAdditionExpression(parserInterprete.AdditionExpressionContext ctx) { }
+	@Override public void exitExpreRule(parserInterprete.ExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAdditionFactor(parserInterprete.AdditionFactorContext ctx) { }
+	@Override public void enterComparRule(parserInterprete.ComparRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAdditionFactor(parserInterprete.AdditionFactorContext ctx) { }
+	@Override public void exitComparRule(parserInterprete.ComparRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultiplicationExpression(parserInterprete.MultiplicationExpressionContext ctx) { }
+	@Override public void enterAddExpreRule(parserInterprete.AddExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultiplicationExpression(parserInterprete.MultiplicationExpressionContext ctx) { }
+	@Override public void exitAddExpreRule(parserInterprete.AddExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultiplicationFactor(parserInterprete.MultiplicationFactorContext ctx) { }
+	@Override public void enterAddFactRule(parserInterprete.AddFactRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultiplicationFactor(parserInterprete.MultiplicationFactorContext ctx) { }
+	@Override public void exitAddFactRule(parserInterprete.AddFactRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElementExpression(parserInterprete.ElementExpressionContext ctx) { }
+	@Override public void enterMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElementExpression(parserInterprete.ElementExpressionContext ctx) { }
+	@Override public void exitMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElementAccess(parserInterprete.ElementAccessContext ctx) { }
+	@Override public void enterMultiFactRule(parserInterprete.MultiFactRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElementAccess(parserInterprete.ElementAccessContext ctx) { }
+	@Override public void exitMultiFactRule(parserInterprete.MultiFactRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCallExpression(parserInterprete.CallExpressionContext ctx) { }
+	@Override public void enterElemExpreRule(parserInterprete.ElemExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCallExpression(parserInterprete.CallExpressionContext ctx) { }
+	@Override public void exitElemExpreRule(parserInterprete.ElemExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimitiveExpression(parserInterprete.PrimitiveExpressionContext ctx) { }
+	@Override public void enterElemAccesRule(parserInterprete.ElemAccesRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimitiveExpression(parserInterprete.PrimitiveExpressionContext ctx) { }
+	@Override public void exitElemAccesRule(parserInterprete.ElemAccesRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArrayFunctions(parserInterprete.ArrayFunctionsContext ctx) { }
+	@Override public void enterCallExpreRule(parserInterprete.CallExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArrayFunctions(parserInterprete.ArrayFunctionsContext ctx) { }
+	@Override public void exitCallExpreRule(parserInterprete.CallExpreRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArrayLiteral(parserInterprete.ArrayLiteralContext ctx) { }
+	@Override public void enterPrimiExpreInt(parserInterprete.PrimiExpreIntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArrayLiteral(parserInterprete.ArrayLiteralContext ctx) { }
+	@Override public void exitPrimiExpreInt(parserInterprete.PrimiExpreIntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionLiteral(parserInterprete.FunctionLiteralContext ctx) { }
+	@Override public void enterPrimiExpreStr(parserInterprete.PrimiExpreStrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionLiteral(parserInterprete.FunctionLiteralContext ctx) { }
+	@Override public void exitPrimiExpreStr(parserInterprete.PrimiExpreStrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionParameters(parserInterprete.FunctionParametersContext ctx) { }
+	@Override public void enterPrimiExpreIdent(parserInterprete.PrimiExpreIdentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionParameters(parserInterprete.FunctionParametersContext ctx) { }
+	@Override public void exitPrimiExpreIdent(parserInterprete.PrimiExpreIdentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMoreIdentifiers(parserInterprete.MoreIdentifiersContext ctx) { }
+	@Override public void enterPrimiExpreTrue(parserInterprete.PrimiExpreTrueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMoreIdentifiers(parserInterprete.MoreIdentifiersContext ctx) { }
+	@Override public void exitPrimiExpreTrue(parserInterprete.PrimiExpreTrueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterHashLiteral(parserInterprete.HashLiteralContext ctx) { }
+	@Override public void enterPrimiExpreFalse(parserInterprete.PrimiExpreFalseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitHashLiteral(parserInterprete.HashLiteralContext ctx) { }
+	@Override public void exitPrimiExpreFalse(parserInterprete.PrimiExpreFalseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterHashContent(parserInterprete.HashContentContext ctx) { }
+	@Override public void enterPrimiExpreExpres(parserInterprete.PrimiExpreExpresContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitHashContent(parserInterprete.HashContentContext ctx) { }
+	@Override public void exitPrimiExpreExpres(parserInterprete.PrimiExpreExpresContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMoreHashContent(parserInterprete.MoreHashContentContext ctx) { }
+	@Override public void enterPrimiExpresArrayliteral(parserInterprete.PrimiExpresArrayliteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMoreHashContent(parserInterprete.MoreHashContentContext ctx) { }
+	@Override public void exitPrimiExpresArrayliteral(parserInterprete.PrimiExpresArrayliteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressionList(parserInterprete.ExpressionListContext ctx) { }
+	@Override public void enterPrimiExpreArrayFuntions(parserInterprete.PrimiExpreArrayFuntionsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressionList(parserInterprete.ExpressionListContext ctx) { }
+	@Override public void exitPrimiExpreArrayFuntions(parserInterprete.PrimiExpreArrayFuntionsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMoreExpressions(parserInterprete.MoreExpressionsContext ctx) { }
+	@Override public void enterPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMoreExpressions(parserInterprete.MoreExpressionsContext ctx) { }
+	@Override public void exitPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintExpression(parserInterprete.PrintExpressionContext ctx) { }
+	@Override public void enterPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintExpression(parserInterprete.PrintExpressionContext ctx) { }
+	@Override public void exitPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIfExpression(parserInterprete.IfExpressionContext ctx) { }
+	@Override public void enterPrimiExprePrint(parserInterprete.PrimiExprePrintContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIfExpression(parserInterprete.IfExpressionContext ctx) { }
+	@Override public void exitPrimiExprePrint(parserInterprete.PrimiExprePrintContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlockStatement(parserInterprete.BlockStatementContext ctx) { }
+	@Override public void enterPrimiExpreIf(parserInterprete.PrimiExpreIfContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlockStatement(parserInterprete.BlockStatementContext ctx) { }
+	@Override public void exitPrimiExpreIf(parserInterprete.PrimiExpreIfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayFunLen(parserInterprete.ArrayFunLenContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayFunLen(parserInterprete.ArrayFunLenContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayFunFist(parserInterprete.ArrayFunFistContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayFunFist(parserInterprete.ArrayFunFistContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayFunLast(parserInterprete.ArrayFunLastContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayFunLast(parserInterprete.ArrayFunLastContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayFunRest(parserInterprete.ArrayFunRestContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayFunRest(parserInterprete.ArrayFunRestContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayFunPush(parserInterprete.ArrayFunPushContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayFunPush(parserInterprete.ArrayFunPushContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayLiteralRule(parserInterprete.ArrayLiteralRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayLiteralRule(parserInterprete.ArrayLiteralRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunParametersRule(parserInterprete.FunParametersRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunParametersRule(parserInterprete.FunParametersRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMoreIdentsRule(parserInterprete.MoreIdentsRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMoreIdentsRule(parserInterprete.MoreIdentsRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterHashLiteralRule(parserInterprete.HashLiteralRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitHashLiteralRule(parserInterprete.HashLiteralRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterHashContRule(parserInterprete.HashContRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitHashContRule(parserInterprete.HashContRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMoreHashContRule(parserInterprete.MoreHashContRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMoreHashContRule(parserInterprete.MoreHashContRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExpreListExpre(parserInterprete.ExpreListExpreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpreListExpre(parserInterprete.ExpreListExpreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExpreListEOF(parserInterprete.ExpreListEOFContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpreListEOF(parserInterprete.ExpreListEOFContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMoreExpreRule(parserInterprete.MoreExpreRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMoreExpreRule(parserInterprete.MoreExpreRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrintExpreRule(parserInterprete.PrintExpreRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrintExpreRule(parserInterprete.PrintExpreRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIfExpreRule(parserInterprete.IfExpreRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIfExpreRule(parserInterprete.IfExpreRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBlockStatRule(parserInterprete.BlockStatRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBlockStatRule(parserInterprete.BlockStatRuleContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -1,11 +1,10 @@
 parser grammar parserInterprete;
 
-// indicar de donde toma la gramatica
 options {
     tokenVocab = lexerInterprete;
 }
 
-program     :(statement)*                                                        #prograstate
+program     :(statement)*                                                       #prograstate
             ;
 
 statement   : LET letStatement                                                  #statelet
@@ -13,13 +12,13 @@ statement   : LET letStatement                                                  
             | expressionStatement                                               #stateexpre
             ;
 
-letStatement    : IDENT ASIGN expression (PyCOMA | EOF)                         #stateletRule
+letStatement    : ID ASIGN expression (PyCOMA | )                           #stateletRule
                 ;
 
-returnStatement :expression (PyCOMA | EOF)                                      #statereturnRule
+returnStatement :expression (PyCOMA | )                                      #statereturnRule
                 ;
 
-expressionStatement :expression (PyCOMA | EOF)                                  #stateexpreRule
+expressionStatement :expression (PyCOMA | )                                  #stateexpreRule
                     ;
 
 expression  :additionExpression comparison                                      #expreRule
@@ -40,7 +39,7 @@ multiplicationExpression :elementExpression multiplicationFactor                
 multiplicationFactor    :((MUL|DIV) elementExpression)*                         #multiFactRule
                         ;
 
-elementExpression   :primitiveExpression (elementAccess|callExpression |EOF)    #elemExpreRule
+elementExpression   :primitiveExpression (elementAccess|callExpression | )    #elemExpreRule
                     ;
 
 elementAccess   :CORCHETEIZQ expression CORCHETEDER                             #elemAccesRule
@@ -51,7 +50,7 @@ callExpression  :PIZQ expressionList PDER                                       
 
 primitiveExpression :INTEGER                                                    #primiExpreInt
                     | STRING                                                    #primiExpreStr
-                    | IDENT                                                     #primiExpreIdent
+                    | ID                                                        #primiExpreIdent
                     | TRUE                                                      #primiExpreTrue
                     | FALSE                                                     #primiExpreFalse
                     | PIZQ expression PDER                                      #primiExpreExpres
@@ -76,10 +75,10 @@ arrayLiteral    : CORCHETEIZQ expressionList CORCHETEDER                        
 functionLiteral : FN PIZQ functionParameters PDER blockStatement                #funLiteralRule
                 ;
 
-functionParameters  :IDENT moreIdentifiers                                      #funParametersRule
+functionParameters  :ID moreIdentifiers                                         #funParametersRule
                     ;
 
-moreIdentifiers : (COMA IDENT)*                                                 #moreIdentsRule
+moreIdentifiers : (COMA ID)*                                                    #moreIdentsRule
                 ;
 
 hashLiteral :CORCHETEIZQ hashContent moreHashContent CORCHETEDER                #hashLiteralRule
@@ -101,7 +100,7 @@ moreExpressions :(COMA expression)*                                             
 printExpression :PUTS PIZQ expression PDER                                      #printExpreRule
                 ;
 
-ifExpression    :IF expression blockStatement (ELSE blockStatement | EOF)       #ifExpreRule
+ifExpression    :IF expression blockStatement (ELSE blockStatement | )       #ifExpreRule
                 ;
 
 blockStatement  : CORCHETEIZQ statement* CORCHETEDER                            #blockStatRule

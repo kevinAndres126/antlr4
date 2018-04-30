@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e284d81d-45fa-40ff-8af4-9995d1e098d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$5$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/GUIMonkey.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/GUIMonkey.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/GUIMonkey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/GUIMonkey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexerInterprete.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexerInterprete.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexerInterprete.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexerInterprete.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parserInterprete.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parserInterprete.g4" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,24 +22,15 @@
       <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1357">
-              <caret line="252" lean-forward="true" selection-start-line="252" selection-end-line="252" />
+            <state relative-caret-position="654">
+              <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1571#1648#0" />
-                <element signature="e#1809#2557#0" />
-                <element signature="class#2654:3455" />
-                <element signature="class#3731:4768" />
-                <element signature="class#4699:5196" />
                 <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUIMonkey.form" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.form">
-          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
@@ -57,27 +42,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThrowingErrorListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/generated/ThrowingErrorListener.java">
+      <file leaf-file-name="lexerInterprete.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lexerInterprete.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#531#532#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#624#625#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="433">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lexerInterprete.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lexerInterprete.g4">
+      <file leaf-file-name="parserInterprete.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/parserInterprete.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="508">
+              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#625#1343#0" expanded="true" />
+                <element signature="e#1342#1343#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,9 +103,7 @@
         <option value="$PROJECT_DIR$/src/test.cc" />
         <option value="$PROJECT_DIR$/src/generated/lexerInterprete.java" />
         <option value="$PROJECT_DIR$/src/test.txt" />
-        <option value="$PROJECT_DIR$/src/lexerInterprete.g4" />
         <option value="$PROJECT_DIR$/test.txt" />
-        <option value="$PROJECT_DIR$/src/parserInterprete.g4" />
         <option value="$PROJECT_DIR$/src/GUIMonkey.java" />
         <option value="$PROJECT_DIR$/src/GUIMonkey.form" />
         <option value="$PROJECT_DIR$/src/generated/ArchivoGuardar.form" />
@@ -124,9 +114,11 @@
         <option value="$PROJECT_DIR$/src/generated/prueba.form" />
         <option value="$PROJECT_DIR$/src/generated/prueba.java" />
         <option value="$PROJECT_DIR$/src/generated/ThrowingErrorListener.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/generated/GUIMonkey.java" />
         <option value="$PROJECT_DIR$/src/generated/GUIMonkey.form" />
+        <option value="$PROJECT_DIR$/src/lexerInterprete.g4" />
+        <option value="$PROJECT_DIR$/src/parserInterprete.g4" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -138,9 +130,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1366" />
-    <option name="y" value="-34" />
-    <option name="width" value="1440" />
-    <option name="height" value="934" />
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -148,8 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,41 +175,43 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="$PROJECT_DIR$/lexerInterprete.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/lexerInterprete.g4::/output-dir" value="$PROJECT_DIR$/generated" />
-    <property name="$PROJECT_DIR$/lexerInterprete.g4::/package" value="generated" />
-    <property name="$PROJECT_DIR$/lexerInterprete.g4::/language" value="Java" />
     <property name="$PROJECT_DIR$/lexerInterprete.g4::/gen-listener" value="false" />
     <property name="$PROJECT_DIR$/lexerInterprete.g4::/gen-visitor" value="false" />
+    <property name="$PROJECT_DIR$/lexerInterprete.g4::/language" value="Java" />
+    <property name="$PROJECT_DIR$/lexerInterprete.g4::/output-dir" value="$PROJECT_DIR$/generated" />
+    <property name="$PROJECT_DIR$/lexerInterprete.g4::/package" value="generated" />
     <property name="$PROJECT_DIR$/parserInterprete.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/parserInterprete.g4::/output-dir" value="$PROJECT_DIR$/generated" />
-    <property name="$PROJECT_DIR$/parserInterprete.g4::/package" value="generated" />
-    <property name="$PROJECT_DIR$/parserInterprete.g4::/language" value="Java" />
     <property name="$PROJECT_DIR$/parserInterprete.g4::/gen-listener" value="false" />
     <property name="$PROJECT_DIR$/parserInterprete.g4::/gen-visitor" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="$PROJECT_DIR$/parserInterprete.g4::/language" value="Java" />
+    <property name="$PROJECT_DIR$/parserInterprete.g4::/output-dir" value="$PROJECT_DIR$/generated" />
+    <property name="$PROJECT_DIR$/parserInterprete.g4::/package" value="generated" />
+    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/auto-gen" value="false" />
+    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/gen-listener" value="true" />
+    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/gen-visitor" value="true" />
+    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/language" value="Java" />
+    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/output-dir" value="$PROJECT_DIR$/src" />
+    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/package" value="generated" />
+    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/auto-gen" value="false" />
+    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/gen-listener" value="true" />
+    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/gen-visitor" value="true" />
+    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/language" value="Java" />
+    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/output-dir" value="$PROJECT_DIR$/src" />
+    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/package" value="generated" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/kevin/Escritorio/Compiladores/prograAntrl4/src/Main.java" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="177" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/output-dir" value="$PROJECT_DIR$/src" />
-    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/package" value="generated" />
-    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/language" value="Java" />
-    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/gen-listener" value="true" />
-    <property name="$PROJECT_DIR$/src/lexerInterprete.g4::/gen-visitor" value="true" />
-    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/auto-gen" value="false" />
-    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/output-dir" value="$PROJECT_DIR$/src" />
-    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/package" value="generated" />
-    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/language" value="Java" />
-    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/gen-listener" value="true" />
-    <property name="$PROJECT_DIR$/src/parserInterprete.g4::/gen-visitor" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/kevin/Escritorio/Compiladores/prograAntrl4/src/Main.java" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="177" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -330,7 +322,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-34" width="1440" height="934" extended-state="6" />
+    <frame x="1366" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
@@ -342,12 +334,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3283046" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3068182" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3061674" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294509" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3294509" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14295977" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14476496" />
       <window_info anchor="bottom" id="ANTLR Preview" order="9" weight="0.43555555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24962063" />
@@ -380,6 +372,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/lexerInterprete.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -543,13 +542,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUIMonkey.java" />
     <entry file="file://$PROJECT_DIR$/src/GUIMonkey.form" />
-    <entry file="file://$PROJECT_DIR$/src/parserInterprete.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lexerInterprete.tokens">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -569,9 +561,10 @@
     <entry file="file://$PROJECT_DIR$/src/generated/prueba.form" />
     <entry file="file://$PROJECT_DIR$/src/generated/prueba.java" />
     <entry file="file://$PROJECT_DIR$/XD" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/event/ActionListener.java" />
     <entry file="file://$PROJECT_DIR$/src/generated/ThrowingErrorListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="405">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -583,13 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lexerInterprete.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -597,41 +583,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/event/ActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="252" lean-forward="true" selection-start-line="252" selection-end-line="252" />
+        <state relative-caret-position="654">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1571#1648#0" />
-            <element signature="e#1809#2557#0" />
-            <element signature="class#2654:3455" />
-            <element signature="class#3731:4768" />
-            <element signature="class#4699:5196" />
             <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.form">
-      <provider selected="true" editor-type-id="ui-designer" />
+    <entry file="file://$PROJECT_DIR$/src/lexerInterprete.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parserInterprete.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#625#1343#0" expanded="true" />
+            <element signature="e#1342#1343#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
