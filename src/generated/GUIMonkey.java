@@ -1,4 +1,6 @@
 package generated;
+import G4.lexerInterprete;
+import G4.parserInterprete;
 import Others.ThrowingErrorListener;
 import org.antlr.v4.gui.Trees;
 import org.antlr.v4.runtime.*;
@@ -13,6 +15,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+
+import Others.MiVisitor;
 
 
 public class GUIMonkey extends JFrame {
@@ -39,6 +43,8 @@ public class GUIMonkey extends JFrame {
     public GUIMonkey() throws BadLocationException {
         super("Monkey");
         setContentPane(panel1);
+        Code.setText("let patipo = 8; let carro = true; patipo > carro;\n" +
+                "fn(carro,logo,pez)[7]");
 
         menuBar = new JMenuBar();
         archivo = new JMenu("Archivo");
@@ -202,12 +208,19 @@ public class GUIMonkey extends JFrame {
             parser.addErrorListener(ThrowingErrorListener.INSTANCE);
 
             tree = parser.program();
+            parser.program();
+
             List<String> errors = ThrowingErrorListener.INSTANCE.getErrorMessages();
 
+
+
             if(errors.isEmpty()) {
+                MiVisitor nv = new MiVisitor();
+                nv.visit(tree);
+
                 ConsoleM.append("Compilación Exitosa!!\n");
             }
-            else if(!errors.isEmpty()){
+            else{
                 ConsoleM.append("Compilación Fallida!!\n");
 
                 for (String err : errors) {

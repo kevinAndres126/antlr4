@@ -1,235 +1,325 @@
 package Others;
-import generated.parserInterprete;
-import generated.parserInterpreteBaseVisitor;
+
+import G4.parserInterprete;
+import G4.parserInterpreteBaseVisitor;
+import com.sun.xml.internal.bind.v2.model.core.ID;
+import org.antlr.v4.runtime.tree.TerminalNode;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MiVisitor extends parserInterpreteBaseVisitor {
+    private ArrayList<String> parametros = new ArrayList<String>();
+
+
     @Override
     public Object visitPrograstate(parserInterprete.PrograstateContext ctx) {
-        return super.visitPrograstate(ctx);
+        System.out.println(ctx.getClass().getName());
+        for(parserInterprete.StatementContext ele : ctx.statement()){
+            visit(ele);
+        }
+        return null;
     }
 
     @Override
     public Object visitStatelet(parserInterprete.StateletContext ctx) {
-        return super.visitStatelet(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.letStatement());
+        return null;    }
 
     @Override
     public Object visitStatereturn(parserInterprete.StatereturnContext ctx) {
-        return super.visitStatereturn(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.returnStatement());
+        return null;    }
 
     @Override
     public Object visitStateexpre(parserInterprete.StateexpreContext ctx) {
-        return super.visitStateexpre(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expressionStatement());
+        return null;    }
 
     @Override
     public Object visitStateletRule(parserInterprete.StateletRuleContext ctx) {
-        return super.visitStateletRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        return null;    }
 
     @Override
     public Object visitStatereturnRule(parserInterprete.StatereturnRuleContext ctx) {
-        return super.visitStatereturnRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        return null;    }
 
     @Override
     public Object visitStateexpreRule(parserInterprete.StateexpreRuleContext ctx) {
-        return super.visitStateexpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        return null;    }
 
     @Override
     public Object visitExpreRule(parserInterprete.ExpreRuleContext ctx) {
-        return super.visitExpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.additionExpression());
+        visit(ctx.comparison());
+        return null;    }
 
     @Override
     public Object visitComparRule(parserInterprete.ComparRuleContext ctx) {
-        return super.visitComparRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        for (parserInterprete.AdditionExpressionContext ele : ctx.additionExpression())
+            visit(ele);
+        return null;    }
 
     @Override
     public Object visitAddExpreRule(parserInterprete.AddExpreRuleContext ctx) {
-        return super.visitAddExpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.multiplicationExpression());
+        visit(ctx.additionFactor());
+        return null;    }
 
     @Override
     public Object visitAddFactRule(parserInterprete.AddFactRuleContext ctx) {
-        return super.visitAddFactRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        for(parserInterprete.MultiplicationExpressionContext ele : ctx.multiplicationExpression()){
+            visit(ele);
+        }
+        return null;    }
 
     @Override
     public Object visitMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx) {
-        return super.visitMultiExpresRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.elementExpression());
+        visit(ctx.multiplicationFactor());
+        return null;    }
 
     @Override
     public Object visitMultiFactRule(parserInterprete.MultiFactRuleContext ctx) {
-        return super.visitMultiFactRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        for (parserInterprete.ElementExpressionContext ele : ctx.elementExpression())
+                visit(ele);
+        return null;    }
 
     @Override
     public Object visitElemExpreRule(parserInterprete.ElemExpreRuleContext ctx) {
-        return super.visitElemExpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.primitiveExpression());
+        if (ctx.callExpression() != null){
+            visit(ctx.callExpression());
+        }else if (ctx.elementAccess() != null){
+            visit(ctx.elementAccess());
+        }
+        return null;    }
 
     @Override
     public Object visitElemAccesRule(parserInterprete.ElemAccesRuleContext ctx) {
-        return super.visitElemAccesRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        return null;    }
 
     @Override
     public Object visitCallExpreRule(parserInterprete.CallExpreRuleContext ctx) {
-        return super.visitCallExpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expressionList());
+        return null;    }
 
     @Override
     public Object visitPrimiExpreInt(parserInterprete.PrimiExpreIntContext ctx) {
-        return super.visitPrimiExpreInt(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //System.out.println(ctx.INTEGER().getSymbol().getText());
+        return Integer.parseInt(ctx.INTEGER().getSymbol().getText());    }
 
     @Override
     public Object visitPrimiExpreStr(parserInterprete.PrimiExpreStrContext ctx) {
-        return super.visitPrimiExpreStr(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //System.out.println(ctx.STRING().getSymbol().getText());
+        return ctx.STRING().getSymbol().getText();    }
 
     @Override
     public Object visitPrimiExpreIdent(parserInterprete.PrimiExpreIdentContext ctx) {
-        return super.visitPrimiExpreIdent(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+       // System.out.println(ctx.ID().getSymbol().getText());
+        return ctx.ID().getSymbol().getText();    }
 
     @Override
     public Object visitPrimiExpreTrue(parserInterprete.PrimiExpreTrueContext ctx) {
-        return super.visitPrimiExpreTrue(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //System.out.println(ctx.TRUE().getSymbol().getText());
+        return ctx.TRUE().getSymbol().getText();    }
 
     @Override
     public Object visitPrimiExpreFalse(parserInterprete.PrimiExpreFalseContext ctx) {
-        return super.visitPrimiExpreFalse(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //System.out.println(ctx.FALSE().getSymbol().getText());
+        return ctx.FALSE().getSymbol().getText();    }
 
     @Override
     public Object visitPrimiExpreExpres(parserInterprete.PrimiExpreExpresContext ctx) {
-        return super.visitPrimiExpreExpres(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        return null;    }
 
     @Override
     public Object visitPrimiExpresArrayliteral(parserInterprete.PrimiExpresArrayliteralContext ctx) {
-        return super.visitPrimiExpresArrayliteral(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.arrayLiteral());
+        return null;    }
 
     @Override
     public Object visitPrimiExpreArrayFuntions(parserInterprete.PrimiExpreArrayFuntionsContext ctx) {
-        return super.visitPrimiExpreArrayFuntions(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.arrayFunctions());
+        visit(ctx.expressionList());
+        return null;    }
 
     @Override
     public Object visitPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx) {
-        return super.visitPrimiExpreFuntionLiteral(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.functionLiteral());
+        return null;    }
 
     @Override
     public Object visitPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx) {
-        return super.visitPrimiExpreHash(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.hashLiteral());
+        return null;    }
 
     @Override
     public Object visitPrimiExprePrint(parserInterprete.PrimiExprePrintContext ctx) {
-        return super.visitPrimiExprePrint(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.printExpression());
+        return null;    }
 
     @Override
     public Object visitPrimiExpreIf(parserInterprete.PrimiExpreIfContext ctx) {
-        return super.visitPrimiExpreIf(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.ifExpression());
+        return null;    }
 
     @Override
     public Object visitArrayFunLen(parserInterprete.ArrayFunLenContext ctx) {
-        return super.visitArrayFunLen(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //Programar lo que sea que haga el metodo
+        return null;    }
 
     @Override
     public Object visitArrayFunFist(parserInterprete.ArrayFunFistContext ctx) {
-        return super.visitArrayFunFist(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //Programar lo que sea que haga el metodo
+        return null;    }
 
     @Override
     public Object visitArrayFunLast(parserInterprete.ArrayFunLastContext ctx) {
-        return super.visitArrayFunLast(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //Programar lo que sea que haga el metodo
+        return null;    }
 
     @Override
     public Object visitArrayFunRest(parserInterprete.ArrayFunRestContext ctx) {
-        return super.visitArrayFunRest(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //Programar lo que sea que haga el metodo
+        return null;    }
 
     @Override
     public Object visitArrayFunPush(parserInterprete.ArrayFunPushContext ctx) {
-        return super.visitArrayFunPush(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        //Programar lo que sea que haga el metodo
+        return null;    }
 
     @Override
     public Object visitArrayLiteralRule(parserInterprete.ArrayLiteralRuleContext ctx) {
-        return super.visitArrayLiteralRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expressionList());
+        return null;    }
 
     @Override
     public Object visitFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx) {
-        return super.visitFunLiteralRule(ctx);
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.functionParameters());
+        visit(ctx.blockStatement());
+        return null;
     }
 
+    //Funciones y parametros, se usa lista para validar
     @Override
     public Object visitFunParametersRule(parserInterprete.FunParametersRuleContext ctx) {
-        return super.visitFunParametersRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        parametros.add(ctx.ID().getSymbol().getText());
+        visit(ctx.moreIdentifiers());
+
+        for (String ID: parametros) {
+            System.out.println(ID);
+        }
+        return null;    }
 
     @Override
     public Object visitMoreIdentsRule(parserInterprete.MoreIdentsRuleContext ctx) {
-        return super.visitMoreIdentsRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        for (TerminalNode ele : ctx.ID())
+            parametros.add(ele.getSymbol().getText());
+        return null;    }
+
 
     @Override
     public Object visitHashLiteralRule(parserInterprete.HashLiteralRuleContext ctx) {
-        return super.visitHashLiteralRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.hashContent());
+        visit(ctx.moreHashContent());
+        return null;    }
 
     @Override
     public Object visitHashContRule(parserInterprete.HashContRuleContext ctx) {
-        return super.visitHashContRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression(0));
+        visit(ctx.expression(1));
+        return null;    }
 
     @Override
     public Object visitMoreHashContRule(parserInterprete.MoreHashContRuleContext ctx) {
-        return super.visitMoreHashContRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        for(parserInterprete.HashContentContext ele : ctx.hashContent()){
+            visit(ele);
+        }
+        return null;    }
 
     @Override
     public Object visitExpreListExpre(parserInterprete.ExpreListExpreContext ctx) {
-        return super.visitExpreListExpre(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        visit(ctx.moreExpressions());
+        return null;    }
 
     @Override
     public Object visitExpreListEOF(parserInterprete.ExpreListEOFContext ctx) {
-        return super.visitExpreListEOF(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        return null;    }
 
     @Override
     public Object visitMoreExpreRule(parserInterprete.MoreExpreRuleContext ctx) {
-        return super.visitMoreExpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        for(parserInterprete.ExpressionContext ele :ctx.expression() ){
+            visit(ele);}
+        return null;    }
 
     @Override
     public Object visitPrintExpreRule(parserInterprete.PrintExpreRuleContext ctx) {
-        return super.visitPrintExpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        return null;    }
 
     @Override
     public Object visitIfExpreRule(parserInterprete.IfExpreRuleContext ctx) {
-        return super.visitIfExpreRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        visit(ctx.expression());
+        for(parserInterprete.BlockStatementContext ele :ctx.blockStatement() ){
+            visit(ele);}
+        return null;    }
 
     @Override
     public Object visitBlockStatRule(parserInterprete.BlockStatRuleContext ctx) {
-        return super.visitBlockStatRule(ctx);
-    }
+        System.out.println(ctx.getClass().getName());
+        for(parserInterprete.StatementContext ele :ctx.statement() ){
+            visit(ele);}
+        return null;    }
 }
