@@ -2222,7 +2222,6 @@ public class parserInterprete extends Parser {
 		}
 	}
 	public static class ExpreListEOFContext extends ExpressionListContext {
-		public TerminalNode EOF() { return getToken(parserInterprete.EOF, 0); }
 		public ExpreListEOFContext(ExpressionListContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -2293,12 +2292,11 @@ public class parserInterprete extends Parser {
 				moreExpressions();
 				}
 				break;
-			case EOF:
+			case PDER:
+			case CORCHETEDER:
 				_localctx = new ExpreListEOFContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(197);
-				match(EOF);
 				}
 				break;
 			default:
@@ -2706,7 +2704,7 @@ public class parserInterprete extends Parser {
 		"\u00bc\5\f\7\2\u00bc-\3\2\2\2\u00bd\u00be\7\5\2\2\u00be\u00c0\5,\27\2"+
 		"\u00bf\u00bd\3\2\2\2\u00c0\u00c3\3\2\2\2\u00c1\u00bf\3\2\2\2\u00c1\u00c2"+
 		"\3\2\2\2\u00c2/\3\2\2\2\u00c3\u00c1\3\2\2\2\u00c4\u00c5\5\f\7\2\u00c5"+
-		"\u00c6\5\62\32\2\u00c6\u00c9\3\2\2\2\u00c7\u00c9\7\2\2\3\u00c8\u00c4\3"+
+		"\u00c6\5\62\32\2\u00c6\u00c9\3\2\2\2\u00c7\u00c9\3\2\2\2\u00c8\u00c4\3"+
 		"\2\2\2\u00c8\u00c7\3\2\2\2\u00c9\61\3\2\2\2\u00ca\u00cb\7\5\2\2\u00cb"+
 		"\u00cd\5\f\7\2\u00cc\u00ca\3\2\2\2\u00cd\u00d0\3\2\2\2\u00ce\u00cc\3\2"+
 		"\2\2\u00ce\u00cf\3\2\2\2\u00cf\63\3\2\2\2\u00d0\u00ce\3\2\2\2\u00d1\u00d2"+

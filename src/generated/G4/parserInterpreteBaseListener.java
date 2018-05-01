@@ -1,7 +1,6 @@
-package generated.G4;// Generated from /home/kevin/Documents/Compiladores/PrograCompi2/2.0/antlr4/src/G4/parserInterprete.g4 by ANTLR 4.7
+// Generated from /home/kevin/Documents/Compiladores/PrograCompi2/2.0/antlr4/src/G4/parserInterprete.g4 by ANTLR 4.7
+package G4;
 
-import G4.parserInterprete;
-import G4.parserInterpreteListener;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;

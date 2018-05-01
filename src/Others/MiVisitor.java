@@ -2,12 +2,9 @@ package Others;
 
 import G4.parserInterprete;
 import G4.parserInterpreteBaseVisitor;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MiVisitor extends parserInterpreteBaseVisitor {
     private ArrayList<String> parametros = new ArrayList<String>();

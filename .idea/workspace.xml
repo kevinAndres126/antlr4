@@ -3,108 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="e284d81d-45fa-40ff-8af4-9995d1e098d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/ThrowingErrorListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/lexerInterprete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/lexerInterprete.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$AddExpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$AddFactRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$AdditionExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$AdditionFactorContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayFunFistContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayFunLastContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayFunLenContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayFunPushContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayFunRestContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayFunctionsContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayLiteralContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ArrayLiteralRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$BlockStatRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$BlockStatementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$CallExpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$CallExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ComparRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ComparisonContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ElemAccesRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ElemExpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ElementAccessContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ElementExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ExpreListEOFContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ExpreListExpreContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ExpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ExpressionListContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ExpressionStatementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$FunLiteralRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$FunParametersRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$FunctionLiteralContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$FunctionParametersContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$HashContRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$HashContentContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$HashLiteralContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$HashLiteralRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$IfExpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$IfExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$LetStatementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MoreExpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MoreExpressionsContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MoreHashContRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MoreHashContentContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MoreIdentifiersContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MoreIdentsRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MultiExpresRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MultiFactRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MultiplicationExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$MultiplicationFactorContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreArrayFuntionsContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreExpresContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreFalseContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreFuntionLiteralContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreHashContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreIdentContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreIfContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreIntContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExprePrintContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreStrContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpreTrueContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimiExpresArrayliteralContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrimitiveExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrintExpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrintExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ProgramContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$PrograstateContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$ReturnStatementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$StateexpreContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$StateexpreRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$StateletContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$StateletRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$StatementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$StatereturnContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete$StatereturnRuleContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterprete.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterpreteBaseListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterpreteBaseVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterpreteListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/parserInterpreteVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/lexerInterprete.g4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/lexerInterprete.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/parserInterprete.g4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/G4/parserInterprete.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/G4/parserInterprete.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatRuleContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatementContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListEOFContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListEOFContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListExpreContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListExpreContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpreRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpreRuleContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpressionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpreRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpreRuleContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpressionsContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpressionsContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpreRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpreRuleContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpressionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/G4/parserInterpreteBaseListener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Others/MiVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Others/MiVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Others/ThrowingErrorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Others/ThrowingErrorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/GUIMonkey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/GUIMonkey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/lexerInterprete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/lexerInterprete.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/parserInterprete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/parserInterprete.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/parserInterpreteBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/parserInterpreteBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/parserInterpreteListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/parserInterpreteVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/lexerInterprete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/lexerInterprete.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterprete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterprete.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterpreteBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterpreteBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterpreteListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterpreteVisitor.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+            <state relative-caret-position="1054">
+              <caret line="188" column="43" lean-forward="true" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
@@ -144,8 +64,8 @@
       <file leaf-file-name="MiVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4650">
-              <caret line="310" column="13" lean-forward="true" selection-start-line="310" selection-start-column="13" selection-end-line="310" selection-end-column="13" />
+            <state relative-caret-position="165">
+              <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#376#384#0" expanded="true" />
@@ -154,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parserInterprete.g4" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parserInterprete.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="-788">
               <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
@@ -223,8 +143,8 @@
         <option value="$PROJECT_DIR$/src/Others/ThrowingErrorListener.java" />
         <option value="$PROJECT_DIR$/src/generated/G4/parserInterpreteBaseListener.java" />
         <option value="$PROJECT_DIR$/src/G4/parserInterprete.g4" />
-        <option value="$PROJECT_DIR$/src/generated/GUIMonkey.java" />
         <option value="$PROJECT_DIR$/src/Others/MiVisitor.java" />
+        <option value="$PROJECT_DIR$/src/generated/GUIMonkey.java" />
       </list>
     </option>
   </component>
@@ -446,6 +366,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
@@ -456,12 +377,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3283046" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3061674" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3061674" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294509" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32929516" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32929516" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14636752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14636752" />
       <window_info anchor="bottom" id="ANTLR Preview" order="9" weight="0.43555555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24962063" />
@@ -674,14 +595,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
+    <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
-          </folding>
+        <state relative-caret-position="-788">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -697,8 +614,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4650">
-          <caret line="310" column="13" lean-forward="true" selection-start-line="310" selection-start-column="13" selection-end-line="310" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#376#384#0" expanded="true" />
@@ -706,10 +623,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
+    <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="1054">
+          <caret line="188" column="43" lean-forward="true" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
+          </folding>
         </state>
       </provider>
     </entry>
