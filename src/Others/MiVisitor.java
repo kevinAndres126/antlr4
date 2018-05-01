@@ -7,8 +7,13 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 import java.util.ArrayList;
 
 public class MiVisitor extends parserInterpreteBaseVisitor {
-    private ArrayList<String> parametros = new ArrayList<String>();
+    private ArrayList<String> parametros;
+    private SymbolTable tablaIDs;
 
+    public MiVisitor() {
+        this.parametros = new ArrayList<String>();
+        this.tablaIDs = new SymbolTable();
+    }
 
     @Override
     public Object visitPrograstate(parserInterprete.PrograstateContext ctx) {

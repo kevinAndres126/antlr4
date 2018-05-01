@@ -103,5 +103,5 @@ printExpression :PUTS PIZQ expression PDER                                      
 ifExpression    :IF expression blockStatement (ELSE blockStatement | )       #ifExpreRule
                 ;
 
-blockStatement  : CORCHETEIZQ statement* CORCHETEDER                            #blockStatRule
+blockStatement  : LLAVEIZQ statement* LLAVEDER                            #blockStatRule
                 ;

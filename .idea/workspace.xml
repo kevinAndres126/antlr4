@@ -4,18 +4,10 @@
     <list default="true" id="e284d81d-45fa-40ff-8af4-9995d1e098d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatRuleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$BlockStatementContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListEOFContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListEOFContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListExpreContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$ExpreListExpreContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpreRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpreRuleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$IfExpressionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpreRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpreRuleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpressionsContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$MoreExpressionsContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpreRuleContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpreRuleContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete$PrintExpressionContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/G4/parserInterprete.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/G4/parserInterpreteBaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/G4/parserInterprete.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/G4/parserInterprete.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Others/MiVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Others/MiVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/G4/lexerInterprete.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/G4/lexerInterprete.tokens" beforeDir="false" />
@@ -25,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterpreteBaseVisitor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterpreteListener.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/G4/parserInterpreteVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/GUIMonkey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/GUIMonkey.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +32,8 @@
       <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="188" column="43" lean-forward="true" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
+            <state relative-caret-position="274">
+              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
@@ -49,26 +42,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThrowingErrorListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Others/ThrowingErrorListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MiVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+            <state relative-caret-position="240">
+              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#376#384#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +57,17 @@
       <file leaf-file-name="parserInterprete.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-788">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="478">
+              <caret line="105" column="46" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lexerInterprete.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/G4/lexerInterprete.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="8" selection-start-line="10" selection-end-line="10" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -86,7 +75,7 @@
       <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="1245">
               <caret line="87" column="38" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -189,13 +178,6 @@
               <item name="antlr4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="generated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="antlr4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="antlr4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="generated" type="462c0819:PsiDirectoryNode" />
-              <item name="G4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="antlr4" type="b2602c69:ProjectViewProjectNode" />
@@ -377,12 +359,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3283046" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3061674" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3061674" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294509" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32929516" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14636752" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14636752" />
       <window_info anchor="bottom" id="ANTLR Preview" order="9" weight="0.43555555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24962063" />
@@ -421,7 +403,6 @@
           <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#376#384#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -558,17 +539,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/G4/lexerInterprete.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="8" selection-start-line="10" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/G4/parserInterpreteBaseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="87" column="38" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Others/ThrowingErrorListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="105" column="46" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -585,48 +596,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Others/ThrowingErrorListener.java">
+    <entry file="file://$PROJECT_DIR$/src/G4/lexerInterprete.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-788">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="87" column="38" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#376#384#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" column="8" selection-start-line="10" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="188" column="43" lean-forward="true" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
+        <state relative-caret-position="274">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getFileChooser#0;class#GUIMonkey#0" />

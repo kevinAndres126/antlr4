@@ -369,8 +369,8 @@ public class parserInterprete extends Parser {
 			case EOF:
 			case PIZQ:
 			case LLAVEIZQ:
+			case LLAVEDER:
 			case CORCHETEIZQ:
-			case CORCHETEDER:
 			case LET:
 			case RETURN:
 			case TRUE:
@@ -458,8 +458,8 @@ public class parserInterprete extends Parser {
 			case EOF:
 			case PIZQ:
 			case LLAVEIZQ:
+			case LLAVEDER:
 			case CORCHETEIZQ:
-			case CORCHETEDER:
 			case LET:
 			case RETURN:
 			case TRUE:
@@ -547,8 +547,8 @@ public class parserInterprete extends Parser {
 			case EOF:
 			case PIZQ:
 			case LLAVEIZQ:
+			case LLAVEDER:
 			case CORCHETEIZQ:
-			case CORCHETEDER:
 			case LET:
 			case RETURN:
 			case TRUE:
@@ -2579,8 +2579,8 @@ public class parserInterprete extends Parser {
 		}
 	}
 	public static class BlockStatRuleContext extends BlockStatementContext {
-		public TerminalNode CORCHETEIZQ() { return getToken(parserInterprete.CORCHETEIZQ, 0); }
-		public TerminalNode CORCHETEDER() { return getToken(parserInterprete.CORCHETEDER, 0); }
+		public TerminalNode LLAVEIZQ() { return getToken(parserInterprete.LLAVEIZQ, 0); }
+		public TerminalNode LLAVEDER() { return getToken(parserInterprete.LLAVEDER, 0); }
 		public List<StatementContext> statement() {
 			return getRuleContexts(StatementContext.class);
 		}
@@ -2612,7 +2612,7 @@ public class parserInterprete extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(220);
-			match(CORCHETEIZQ);
+			match(LLAVEIZQ);
 			setState(224);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -2628,7 +2628,7 @@ public class parserInterprete extends Parser {
 				_la = _input.LA(1);
 			}
 			setState(227);
-			match(CORCHETEDER);
+			match(LLAVEDER);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2711,10 +2711,10 @@ public class parserInterprete extends Parser {
 		"\7 \2\2\u00d2\u00d3\7\7\2\2\u00d3\u00d4\5\f\7\2\u00d4\u00d5\7\b\2\2\u00d5"+
 		"\65\3\2\2\2\u00d6\u00d7\7!\2\2\u00d7\u00d8\5\f\7\2\u00d8\u00dc\58\35\2"+
 		"\u00d9\u00da\7\"\2\2\u00da\u00dd\58\35\2\u00db\u00dd\3\2\2\2\u00dc\u00d9"+
-		"\3\2\2\2\u00dc\u00db\3\2\2\2\u00dd\67\3\2\2\2\u00de\u00e2\7\13\2\2\u00df"+
+		"\3\2\2\2\u00dc\u00db\3\2\2\2\u00dd\67\3\2\2\2\u00de\u00e2\7\t\2\2\u00df"+
 		"\u00e1\5\4\3\2\u00e0\u00df\3\2\2\2\u00e1\u00e4\3\2\2\2\u00e2\u00e0\3\2"+
 		"\2\2\u00e2\u00e3\3\2\2\2\u00e3\u00e5\3\2\2\2\u00e4\u00e2\3\2\2\2\u00e5"+
-		"\u00e6\7\f\2\2\u00e69\3\2\2\2\23=ELQV_isz\u0097\u009e\u00b1\u00c1\u00c8"+
+		"\u00e6\7\n\2\2\u00e69\3\2\2\2\23=ELQV_isz\u0097\u009e\u00b1\u00c1\u00c8"+
 		"\u00ce\u00dc\u00e2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());

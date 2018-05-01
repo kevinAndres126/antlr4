@@ -44,7 +44,7 @@ public class GUIMonkey extends JFrame {
         super("Monkey");
         setContentPane(panel1);
         Code.setText("let patipo = 8; let carro = true; patipo > carro;\n" +
-                "fn(carro,logo,pez)[7]");
+                "fn(carro,logo,pez){7}");
 
         menuBar = new JMenuBar();
         archivo = new JMenu("Archivo");
