@@ -3,6 +3,7 @@ package Others;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
+import Others.ThrowingErrorListener;
 
 import java.util.LinkedList;
 
@@ -41,7 +42,9 @@ public class SymbolTable {
             int j = 0;
             while (j < this.tabla.size() && this.tabla.get(j).nivel == nivelActual) {
                 if (this.tabla.get(j).tok.getText().equals(nombre)) {
-                    System.out.println("El identificador \"" + nombre + "\" ya ha sido declarado!!!");
+                    String error = "El identificador \"" + nombre + "\" ya ha sido declarado.";
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    //System.out.println("El identificador \"" + nombre + "\" ya ha sido declarado.");
                     return null;
                 }
                 j++;
@@ -56,7 +59,9 @@ public class SymbolTable {
             int j = 0;
             while (j < this.tabla.size() && this.tabla.get(j).nivel == nivelActual) {
                 if (this.tabla.get(j).tok.getText().equals(token.getText())) {
-                    System.out.println("El identificador \"" + token.getText() + "\" ya ha sido declarado. Line " + token.getLine() + ":" + token.getCharPositionInLine());
+                    //System.out.println("El identificador \"" + token.getText() + "\" ya ha sido declarado. Line " + token.getLine() + ":" + token.getCharPositionInLine());
+                    String error = "El identificador \"" + token.getText() + "\" ya ha sido declarado.";
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
                     return null;
                 }
                 j++;

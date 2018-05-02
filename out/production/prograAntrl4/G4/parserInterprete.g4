@@ -21,17 +21,17 @@ returnStatement :expression (PyCOMA | )                                      #st
 expressionStatement :expression (PyCOMA | )                                  #stateexpreRule
                     ;
 
-expression  :additionExpression comparison                                      #expreRule
-            ;
-
-comparison  :((MENORK|MAYORK|MENORIGUALK|MAYORIGUALK|II) additionExpression)*   #comparRule
-            ;
-
 additionExpression  :multiplicationExpression additionFactor                    #addExpreRule
                     ;
 
 additionFactor  :((SUMA|RESTA) multiplicationExpression)*                       #addFactRule
                 ;
+
+expression  :additionExpression comparison                                      #expreRule
+            ;
+
+comparison  :((MENORK|MAYORK|MENORIGUALK|MAYORIGUALK|II) additionExpression)*   #comparRule
+            ;
 
 multiplicationExpression :elementExpression multiplicationFactor                #multiExpresRule
                          ;

@@ -44,7 +44,16 @@ public class GUIMonkey extends JFrame {
         super("Monkey");
         setContentPane(panel1);
         Code.setText("let patipo = 8; let carro = true; patipo > carro;\n" +
-                "fn(carro,logo,pez){7}");
+                "let bailarfn = fn(carro,logo,pez){\n" +
+                "      if(8 > 3){\n" +
+                "            puts(32);\n" +
+                "            return 8;\n" +
+                "       }else{\n" +
+                "           return true;\n" +
+                "       }\n" +
+                "}\n" +
+                "\n" +
+                "let resultado = bailarfn(x,y,z);");
 
         menuBar = new JMenuBar();
         archivo = new JMenu("Archivo");
@@ -218,7 +227,18 @@ public class GUIMonkey extends JFrame {
                 MiVisitor nv = new MiVisitor();
                 nv.visit(tree);
 
-                ConsoleM.append("Compilación Exitosa!!\n");
+                List<String> errorsTypes = ThrowingErrorListener.INSTANCE.getErrorMessages();
+
+                if (errorsTypes.isEmpty()){
+                    ConsoleM.append("Compilación Exitosa!!\n");
+                }else {
+                    ConsoleM.append("Compilación Fallida!!\n");
+
+                    for (String err : errorsTypes) {
+                        ConsoleM.append(err + "\n");
+                    }
+                }
+
             }
             else{
                 ConsoleM.append("Compilación Fallida!!\n");
