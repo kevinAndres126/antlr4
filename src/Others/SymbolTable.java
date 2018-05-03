@@ -16,12 +16,30 @@ public class SymbolTable {
             Token tok;
             int type; //forma simple de identificar un tipo del lenguaje [0--> Entero] NO ES TAN CECESARIO EN ESTE LENGUAJE ALPHA PUESTO QUE SOLO ACEPTA NUMEROS
             ParserRuleContext decl; //por si fuera necesario saber más acerca del contexto del identificador en el árbol
+            String value;
 
-            public Ident(int n, Token t, int ty, ParserRuleContext d) {
+            public Ident(int n, Token t, int ty, ParserRuleContext d,String v) {
                 nivel = n;
                 tok = t;
                 type = ty;
                 decl = d;
+                value = v;
+            }
+
+            public int getNivel() {
+                return nivel;
+            }
+
+            public Token getTok() {
+                return tok;
+            }
+
+            public int getType() {
+                return type;
+            }
+
+            public ParserRuleContext getDecl() {
+                return decl;
             }
 
             public String toString(){
@@ -35,10 +53,10 @@ public class SymbolTable {
             this.tabla = new LinkedList<Ident>();
         }
 
-        public Ident insertar(String nombre, int tipo, ParserRuleContext declaracion)
+        public Ident insertar(String nombre, int tipo, ParserRuleContext declaracion, String v)
         {
             Token token = new CommonToken(0,nombre);
-            Ident i = new Ident(nivelActual,token,tipo,declaracion);
+            Ident i = new Ident(nivelActual,token,tipo,declaracion,v);
             int j = 0;
             while (j < this.tabla.size() && this.tabla.get(j).nivel == nivelActual) {
                 if (this.tabla.get(j).tok.getText().equals(nombre)) {
@@ -53,9 +71,9 @@ public class SymbolTable {
             return this.tabla.get(0);
         }
 
-        public Ident insertar(Token token, int tipo, ParserRuleContext declaracion)
+        public Ident insertar(Token token, int tipo, ParserRuleContext declaracion, String v)
         {
-            Ident i = new Ident(nivelActual,token,tipo,declaracion);
+            Ident i = new Ident(nivelActual,token,tipo,declaracion, v);
             int j = 0;
             while (j < this.tabla.size() && this.tabla.get(j).nivel == nivelActual) {
                 if (this.tabla.get(j).tok.getText().equals(token.getText())) {
@@ -87,15 +105,15 @@ public class SymbolTable {
             this.nivelActual--;
         }
 
-        public Ident buscar(String nombre)
+        public int buscar(String nombre)
         {
-            Ident temp=null;
             for(Ident id : this.tabla)
+            {
                 if (id.tok.getText().equals(nombre)) {
-                    temp = id;
-                    break;
+                    return id.getType();
                 }
-            return temp;
+            }
+            return -1;
         }
 
         public void imprimir() {
@@ -106,7 +124,7 @@ public class SymbolTable {
                     for (int j = 0; j < i.nivel; j++) {
                         nivel += "\t";
                     }
-                    System.out.println(nivel + "Nombre: " + i.tok.getText() + " -> Nivel: " + i.nivel + " -> Tipo: " +i.type);
+                    System.out.println(nivel + "Nombre: " + i.tok.getText() + " -> Nivel: " + i.nivel + " -> Tipo: " +i.type + " -> Valor: "+ i.value);
                 }
                 System.out.println("------------------------------------------");
             }

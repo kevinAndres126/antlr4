@@ -2,9 +2,14 @@ package Others;
 
 import G4.parserInterprete;
 import G4.parserInterpreteBaseVisitor;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
+import java.awt.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /*
         0 = integer
@@ -60,11 +65,48 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitStateletRule(parserInterprete.StateletRuleContext ctx) {
-        System.out.println(ctx.getClass().getName());
-        int tipo = (Integer) visit(ctx.expression());
-        this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),tipo,ctx);
+        //System.out.println(ctx.getClass().getName())
+        String tipo = (String) visit(ctx.expression());
+       // System.out.println(tipo);
+        if (tipo.equals("ExpresExpres")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),5,ctx,tipo);
+        }
+        else if (tipo.equals("ArrayLiteral")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),6,ctx,tipo);
+        }
+        else if (tipo.equals("ArrayFuntion")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),7,ctx,tipo);
+        }
+        else if (tipo.equals("neutral")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),8,ctx,tipo);
+        }
+        else if (tipo.equals("ExpreHash")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),9,ctx,tipo);
+        }
+        else if (tipo.equals("Print")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),10,ctx,tipo);
+        }
+        else if (tipo.equals("IFExprs")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),11,ctx,tipo);
+        }
+        else if (tipo.equals("true")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),3,ctx,tipo);
+        }
+        else if (tipo.equals("false")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),3,ctx,tipo);
+        }
+        else if (tipo.contains("#")){
+            //System.out.println(tipo);
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),2,ctx,tipo.substring(1,tipo.length()));
+        }
+        else if (tipo.contains("*")){
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),1,ctx,tipo.substring(1,tipo.length()));
+        }else {
+            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),0,ctx,tipo);
+        }
+
         this.tablaIDs.imprimir();
-        System.out.println(tipo);
+        //System.out.println(tipo);
         return null;    }
 
     @Override
@@ -82,23 +124,115 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitExpreRule(parserInterprete.ExpreRuleContext ctx) {
        // System.out.println(ctx.getClass().getName());
-        int result = (Integer) visit(ctx.additionExpression());
-        visit(ctx.comparison());
-        return result;    }
+        String result = (String) visit(ctx.additionExpression());
+        if(visit(ctx.additionExpression()) != null){
+            if (visit(ctx.comparison()) != null){
+                LinkedList<String> compare = (LinkedList<String>) visit(ctx.comparison());
+                for (String x: compare) {
+                   System.out.println(x);
+                }
+            }
+        };
+
+
+        /*
+        String resultAdExp = (String) visit(ctx.additionExpression());
+        String varDosComp = (String) visit(ctx.comparison());
+
+        if (varDosComp != null){
+            int lenResult =resultAdExp.length();
+            int lenVarDos =varDosComp.length();
+
+            String tempResult = resultAdExp.substring(1, lenResult);
+            String tempVarDos = varDosComp.substring(1,lenVarDos);
+
+            int varUnoType = this.tablaIDs.buscar(tempResult);
+            int varDosType = this.tablaIDs.buscar(tempVarDos);
+
+            System.out.println(resultAdExp);
+            System.out.println(varUnoType);
+            System.out.println("-----------------------");
+            System.out.println(varDosComp);
+            System.out.println(varDosType);
+            System.out.println("-----------------------");
+
+            if (varUnoType == -1){
+                if (resultAdExp.contains("#")){
+                    String error = "El identificador " + "'" + tempResult +  "'" + " no ha sido declarado.";
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    varUnoType = 2;
+                }else if (resultAdExp.contains("*")){
+                    varUnoType = 1;
+                }else if (resultAdExp.equals("true") || resultAdExp.equals("false")){
+                    varUnoType = 3;
+                } else {
+                  //  System.out.println("integer else uno");
+                    //System.out.println(varUnoType + " 1");
+                    varUnoType = 0;
+                    //System.out.println(varUnoType + "2");
+                }
+            }
+            if(varDosType == -1){
+                if (varDosComp.contains("#")){
+                    String error = "El identificador " + "'" + tempVarDos +  "'" + " no ha sido declarado.";
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    varDosType = 2;
+                }else if (varDosComp.contains("*")){
+                    varDosType = 1;
+                }else if (varDosComp.equals("true") || varDosComp.equals("false")){
+                    varDosType = 3;
+                }else {
+                    //System.out.println("integer else dos");
+                    //System.out.println(varDosType + "ty");
+                    varDosType = 0;
+                    //System.out.println(varDosType + "adsf");
+                }
+            }
+            //System.out.println(varUnoType);
+            //System.out.println(varDosType);
+
+
+            if (varUnoType != varDosType){
+                if (resultAdExp.contains("#") || resultAdExp.contains("*")){
+                    resultAdExp = tempResult;
+                }
+                if (varDosComp.contains("#") || varDosComp.contains("*")){
+                    varDosComp = tempVarDos;
+                }
+                String error = "Error de tipos, en comparacion de variables " + "'" + resultAdExp+ "'" + " y " + "'" + varDosComp+ "'";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+
+
+            }
+
+        }
+
+        return resultAdExp;   */
+    return result;
+    }
 
     @Override
     public Object visitComparRule(parserInterprete.ComparRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        for (parserInterprete.AdditionExpressionContext ele : ctx.additionExpression()){
-            visit(ele);
+        LinkedList<String> compare = new LinkedList<>();
+        for(parserInterprete.AdditionExpressionContext ele : ctx.additionExpression()){
+            if(!compare.contains(visit(ele))){
+                compare.add((String) visit(ele));
+            }
         }
+        //System.out.println(compare.size() + "size");
 
-        return null;    }
+        if (compare.size() == 0){
+            return null;
+        }else {
+            return compare;
+        }
+    }
 
     @Override
     public Object visitAddExpreRule(parserInterprete.AddExpreRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        int result = (Integer) visit(ctx.multiplicationExpression());
+        String result = (String) visit(ctx.multiplicationExpression());
         visit(ctx.additionFactor());
         return result;    }
 
@@ -113,7 +247,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        int result = (Integer) visit(ctx.elementExpression());
+        String result = (String) visit(ctx.elementExpression());
         visit(ctx.multiplicationFactor());
         return result;    }
 
@@ -127,7 +261,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitElemExpreRule(parserInterprete.ElemExpreRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        int result = (Integer) visit(ctx.primitiveExpression());
+        String result = (String) visit(ctx.primitiveExpression());
         if (ctx.callExpression() != null){
             visit(ctx.callExpression());
         }else if (ctx.elementAccess() != null){
@@ -151,76 +285,76 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitPrimiExpreInt(parserInterprete.PrimiExpreIntContext ctx) {
         //System.out.println(ctx.getClass().getName());
         //System.out.println(ctx.INTEGER().getSymbol().getText());
-        return 0;    }
+        return ctx.INTEGER().getSymbol().getText();    }
 
     @Override
     public Object visitPrimiExpreStr(parserInterprete.PrimiExpreStrContext ctx) {
         //System.out.println(ctx.getClass().getName());
         //System.out.println(ctx.STRING().getSymbol().getText());
-        return 1;    }
+        return "*"+ ctx.STRING().getSymbol().getText() ;    }
 
     @Override
     public Object visitPrimiExpreIdent(parserInterprete.PrimiExpreIdentContext ctx) {
         //System.out.println(ctx.getClass().getName());
        // System.out.println(ctx.ID().getSymbol().getText());
-        return 2;    }
+        return "#"+ctx.ID().getSymbol().getText();    }
 
     @Override
     public Object visitPrimiExpreTrue(parserInterprete.PrimiExpreTrueContext ctx) {
        // System.out.println(ctx.getClass().getName());
         //System.out.println(ctx.TRUE().getSymbol().getText());
-        return 3;    }
+        return "true";    }
 
     @Override
     public Object visitPrimiExpreFalse(parserInterprete.PrimiExpreFalseContext ctx) {
         //System.out.println(ctx.getClass().getName());
         //System.out.println(ctx.FALSE().getSymbol().getText());
-        return 4;    }
+        return "false";    }
 
     @Override
     public Object visitPrimiExpreExpres(parserInterprete.PrimiExpreExpresContext ctx) {
         //System.out.println(ctx.getClass().getName());
         //llamada de metodos
         visit(ctx.expression());
-        return 5;    }
+        return "ExpresExpres";    }
 
     @Override
     public Object visitPrimiExpresArrayliteral(parserInterprete.PrimiExpresArrayliteralContext ctx) {
         //System.out.println(ctx.getClass().getName());
         visit(ctx.arrayLiteral());
-        return 6;    }
+        return "ArrayLiteral";    }
 
     @Override
     public Object visitPrimiExpreArrayFuntions(parserInterprete.PrimiExpreArrayFuntionsContext ctx) {
         //System.out.println(ctx.getClass().getName());
         visit(ctx.arrayFunctions());
         visit(ctx.expressionList());
-        return 7;    }
+        return "ArrayFuntion";    }
 
     @Override
     public Object visitPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx) {
         //System.out.println(ctx.getClass().getName());
         //Declaraciones de Metodos
         visit(ctx.functionLiteral());
-        return 8;    }
+        return "neutral";    }
 
     @Override
     public Object visitPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx) {
         //System.out.println(ctx.getClass().getName());
         visit(ctx.hashLiteral());
-        return 9;    }
+        return "ExpreHash";    }
 
     @Override
     public Object visitPrimiExprePrint(parserInterprete.PrimiExprePrintContext ctx) {
         //System.out.println(ctx.getClass().getName());
         visit(ctx.printExpression());
-        return 10;    }
+        return "Print";    }
 
     @Override
     public Object visitPrimiExpreIf(parserInterprete.PrimiExpreIfContext ctx) {
         //System.out.println(ctx.getClass().getName());
         visit(ctx.ifExpression());
-        return 11;    }
+        return "IFExprs";    }
 
     @Override
     public Object visitArrayFunLen(parserInterprete.ArrayFunLenContext ctx) {
@@ -274,7 +408,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         visit(ctx.moreIdentifiers());
 
         for (String ID: parametros) {
-            System.out.println(ID);
+            //System.out.println(ID);
         }
         return null;    }
 
@@ -322,7 +456,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitMoreExpreRule(parserInterprete.MoreExpreRuleContext ctx) {
-        System.out.println(ctx.getClass().getName());
+        //System.out.println(ctx.getClass().getName());
         for(parserInterprete.ExpressionContext ele :ctx.expression() ){
             visit(ele);}
         return null;    }

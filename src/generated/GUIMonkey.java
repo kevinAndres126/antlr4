@@ -43,7 +43,7 @@ public class GUIMonkey extends JFrame {
     public GUIMonkey() throws BadLocationException {
         super("Monkey");
         setContentPane(panel1);
-        Code.setText("let patipo = 8; let carro = true; patipo > carro;\n" +
+        Code.setText("let patito = 8; let carro = true; patito > carro;\n" +
                 "let bailarfn = fn(carro,logo,pez){\n" +
                 "      if(8 > 3){\n" +
                 "            puts(32);\n" +
