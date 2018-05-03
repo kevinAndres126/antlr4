@@ -126,101 +126,91 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitExpreRule(parserInterprete.ExpreRuleContext ctx) {
        // System.out.println(ctx.getClass().getName());
-        String result = (String) visit(ctx.additionExpression());
-        if(visit(ctx.additionExpression()) != null){
-            if (visit(ctx.comparison()) != null){
-                LinkedList<String> compare = (LinkedList<String>) visit(ctx.comparison());
-                for (String x: compare) {
-                   System.out.println(x);
-                }
-            }
-        };
-
-
-        /*
         String resultAdExp = (String) visit(ctx.additionExpression());
-        String varDosComp = (String) visit(ctx.comparison());
 
-        if (varDosComp != null){
-            int lenResult =resultAdExp.length();
-            int lenVarDos =varDosComp.length();
+        if (visit(ctx.comparison()) != null){
 
-            String tempResult = resultAdExp.substring(1, lenResult);
-            String tempVarDos = varDosComp.substring(1,lenVarDos);
+            ArrayList<String> compare = (ArrayList<String>) visit(ctx.comparison());
+            for (String value: compare) {
+                String varDosComp = value;
+                int lenResult =resultAdExp.length();
+                int lenVarDos =varDosComp.length();
 
-            int varUnoType = this.tablaIDs.buscar(tempResult);
-            int varDosType = this.tablaIDs.buscar(tempVarDos);
+                String tempResult = resultAdExp.substring(1, lenResult);
+                String tempVarDos = varDosComp.substring(1,lenVarDos);
 
-            System.out.println(resultAdExp);
-            System.out.println(varUnoType);
-            System.out.println("-----------------------");
-            System.out.println(varDosComp);
-            System.out.println(varDosType);
-            System.out.println("-----------------------");
+                int varUnoType = this.tablaIDs.buscar(tempResult);
+                int varDosType = this.tablaIDs.buscar(tempVarDos);
+                /*
+                System.out.println(resultAdExp);
+                System.out.println(varUnoType);
+                System.out.println("-----------------------");
+                System.out.println(varDosComp);
+                System.out.println(varDosType);
+                System.out.println("-----------------------");
+                */
+                if (varUnoType == -1){
+                    if (resultAdExp.contains("#")){
+                        String error = "El identificador " + "'" + tempResult +  "'" + " no ha sido declarado.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                        varUnoType = 2;
+                    }else if (resultAdExp.contains("*")){
+                        varUnoType = 1;
+                    }else if (resultAdExp.equals("true") || resultAdExp.equals("false")){
+                        varUnoType = 3;
+                    } else {
+                      //  System.out.println("integer else uno");
+                        //System.out.println(varUnoType + " 1");
+                        varUnoType = 0;
+                        //System.out.println(varUnoType + "2");
+                    }
+                }
+                if(varDosType == -1){
+                    if (varDosComp.contains("#")){
+                        String error = "El identificador " + "'" + tempVarDos +  "'" + " no ha sido declarado.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                        varDosType = 2;
+                    }else if (varDosComp.contains("*")){
+                        varDosType = 1;
+                    }else if (varDosComp.equals("true") || varDosComp.equals("false")){
+                        varDosType = 3;
+                    }else {
+                        //System.out.println("integer else dos");
+                        //System.out.println(varDosType + "ty");
+                        varDosType = 0;
+                        //System.out.println(varDosType + "adsf");
+                    }
+                }
+                //System.out.println(varUnoType);
+                //System.out.println(varDosType);
 
-            if (varUnoType == -1){
-                if (resultAdExp.contains("#")){
-                    String error = "El identificador " + "'" + tempResult +  "'" + " no ha sido declarado.";
+
+                if (varUnoType != varDosType){
+                    if (resultAdExp.contains("#") || resultAdExp.contains("*")){
+                        resultAdExp = tempResult;
+                    }
+                    if (varDosComp.contains("#") || varDosComp.contains("*")){
+                        varDosComp = tempVarDos;
+                    }
+                    String error = "Error de tipos, en comparacion de variables " + "'" + resultAdExp+ "'" + " y " + "'" + varDosComp+ "'";
                     ThrowingErrorListener.INSTANCE.setErrorMessages(error);
-                    varUnoType = 2;
-                }else if (resultAdExp.contains("*")){
-                    varUnoType = 1;
-                }else if (resultAdExp.equals("true") || resultAdExp.equals("false")){
-                    varUnoType = 3;
-                } else {
-                  //  System.out.println("integer else uno");
-                    //System.out.println(varUnoType + " 1");
-                    varUnoType = 0;
-                    //System.out.println(varUnoType + "2");
-                }
-            }
-            if(varDosType == -1){
-                if (varDosComp.contains("#")){
-                    String error = "El identificador " + "'" + tempVarDos +  "'" + " no ha sido declarado.";
-                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
-                    varDosType = 2;
-                }else if (varDosComp.contains("*")){
-                    varDosType = 1;
-                }else if (varDosComp.equals("true") || varDosComp.equals("false")){
-                    varDosType = 3;
-                }else {
-                    //System.out.println("integer else dos");
-                    //System.out.println(varDosType + "ty");
-                    varDosType = 0;
-                    //System.out.println(varDosType + "adsf");
-                }
-            }
-            //System.out.println(varUnoType);
-            //System.out.println(varDosType);
 
 
-            if (varUnoType != varDosType){
-                if (resultAdExp.contains("#") || resultAdExp.contains("*")){
-                    resultAdExp = tempResult;
                 }
-                if (varDosComp.contains("#") || varDosComp.contains("*")){
-                    varDosComp = tempVarDos;
-                }
-                String error = "Error de tipos, en comparacion de variables " + "'" + resultAdExp+ "'" + " y " + "'" + varDosComp+ "'";
-                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
-
-
             }
 
         }
 
-        return resultAdExp;   */
-    return result;
+        return resultAdExp;
     }
 
     @Override
     public Object visitComparRule(parserInterprete.ComparRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        LinkedList<String> compare = new LinkedList<>();
+        ArrayList<String> compare = new ArrayList<>();
         for(parserInterprete.AdditionExpressionContext ele : ctx.additionExpression()){
-            if(!compare.contains(visit(ele))){
-                compare.add((String) visit(ele));
-            }
+            compare.add((String) visit(ele));
+
         }
         //System.out.println(compare.size() + "size");
 
