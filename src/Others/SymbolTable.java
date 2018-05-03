@@ -120,11 +120,11 @@ public class SymbolTable {
             System.out.println("****** ESTADO DE TABLA DE SÍMBOLOS ******");
             if (!this.tabla.isEmpty()) {
                 for (Ident i : this.tabla) {
-                    String nivel = "";
+                    /*String nivel = "";
                     for (int j = 0; j < i.nivel; j++) {
                         nivel += "\t";
-                    }
-                    System.out.println(nivel + "Nombre: " + i.tok.getText() + " -> Nivel: " + i.nivel + " -> Tipo: " +i.type + " -> Valor: "+ i.value);
+                    }*/
+                    System.out.println(/*nivel + */"Nombre: " + i.tok.getText() + " -> Nivel: " + i.nivel + " -> Tipo: " +i.type + " -> Valor: "+ i.value);
                 }
                 System.out.println("------------------------------------------");
             }

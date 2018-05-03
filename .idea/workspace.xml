@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e284d81d-45fa-40ff-8af4-9995d1e098d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.Monkey_EBNF_Grammar3.docx#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/Others/SymbolTable$Ident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/Others/SymbolTable$Ident.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/Others/SymbolTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/Others/SymbolTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/generated/GUIMonkey.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Others/MiVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Others/MiVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Others/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Others/SymbolTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/GUIMonkey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/GUIMonkey.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +21,8 @@
       <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+            <state relative-caret-position="378">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
@@ -35,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiVisitor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MiVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="131" column="19" lean-forward="true" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
+            <state relative-caret-position="7081">
+              <caret line="483" lean-forward="true" selection-start-line="483" selection-end-line="483" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,19 +46,21 @@
       <file leaf-file-name="parserInterprete.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="484">
+              <caret line="102" column="89" selection-start-line="102" selection-start-column="78" selection-end-line="102" selection-end-column="89" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="331">
+              <caret line="127" column="17" lean-forward="true" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4787#4788#0" expanded="true" />
+                <element signature="e#4828#4829#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,10 +127,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="220" />
-    <option name="y" value="27" />
-    <option name="width" value="1024" />
-    <option name="height" value="576" />
+    <option name="x" value="1366" />
+    <option name="y" value="-34" />
+    <option name="width" value="1920" />
+    <option name="height" value="1114" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -140,8 +138,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,7 +175,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -216,7 +214,7 @@
     <property name="$PROJECT_DIR$/src/parserInterprete.g4::/package" value="generated" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/kevin/Escritorio/Compiladores/prograAntrl4/src/Main.java" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="177" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../TareaCheker/Alpha" />
+    <property name="last_opened_file_path" value="$USER_HOME$/TareaCheker/Alpha" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -332,7 +330,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="27" width="1920" height="1053" extended-state="6" />
+    <frame x="1366" y="-34" width="1920" height="1114" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993197" />
@@ -343,18 +342,18 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3283046" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26872247" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2685185" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294509" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32929516" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10737179" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.077991456" />
       <window_info anchor="bottom" id="ANTLR Preview" order="9" weight="0.43555555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24962063" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39968404" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -510,9 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -533,16 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/G4/parserInterprete.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -560,10 +546,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/LinkedList.class" />
     <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+        <state relative-caret-position="378">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getFileChooser#0;class#GUIMonkey#0" />
@@ -573,24 +560,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/LinkedList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="312" selection-start-line="312" selection-end-line="312" />
+        <state relative-caret-position="484">
+          <caret line="102" column="89" selection-start-line="102" selection-start-column="78" selection-end-line="102" selection-end-column="89" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="131" column="19" lean-forward="true" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
+        <state relative-caret-position="7081">
+          <caret line="483" lean-forward="true" selection-start-line="483" selection-end-line="483" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="127" column="17" lean-forward="true" selection-start-line="127" selection-start-column="17" selection-end-line="127" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4787#4788#0" expanded="true" />
+            <element signature="e#4828#4829#0" expanded="true" />
           </folding>
         </state>
       </provider>

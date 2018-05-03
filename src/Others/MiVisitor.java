@@ -39,9 +39,11 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitPrograstate(parserInterprete.PrograstateContext ctx) {
         //System.out.println(ctx.getClass().getName());
+        this.tablaIDs.openScope();
         for(parserInterprete.StatementContext ele : ctx.statement()){
             visit(ele);
         }
+        this.tablaIDs.closeScope();
         return null;
     }
 
@@ -396,7 +398,9 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
         visit(ctx.functionParameters());
+        this.tablaIDs.openScope();
         visit(ctx.blockStatement());
+        this.tablaIDs.closeScope();
         return null;
     }
 
@@ -471,14 +475,18 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitIfExpreRule(parserInterprete.IfExpreRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
         visit(ctx.expression());
+        this.tablaIDs.openScope();
         for(parserInterprete.BlockStatementContext ele :ctx.blockStatement() ){
-            visit(ele);}
+            visit(ele);
+        }
+        this.tablaIDs.closeScope();
         return null;    }
 
     @Override
     public Object visitBlockStatRule(parserInterprete.BlockStatRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
         for(parserInterprete.StatementContext ele :ctx.statement() ){
-            visit(ele);}
+            visit(ele);
+        }
         return null;    }
 }
