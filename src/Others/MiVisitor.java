@@ -107,7 +107,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),0,ctx,tipo);
         }
 
-        this.tablaIDs.imprimir();
+        //this.tablaIDs.imprimir();
         //System.out.println(tipo);
         return null;    }
 
@@ -141,14 +141,6 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
                 int varUnoType = this.tablaIDs.buscar(tempResult);
                 int varDosType = this.tablaIDs.buscar(tempVarDos);
-                /*
-                System.out.println(resultAdExp);
-                System.out.println(varUnoType);
-                System.out.println("-----------------------");
-                System.out.println(varDosComp);
-                System.out.println(varDosType);
-                System.out.println("-----------------------");
-                */
                 if (varUnoType == -1){
                     if (resultAdExp.contains("#")){
                         String error = "El identificador " + "'" + tempResult +  "'" + " no ha sido declarado.";
@@ -159,10 +151,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
                     }else if (resultAdExp.equals("true") || resultAdExp.equals("false")){
                         varUnoType = 3;
                     } else {
-                      //  System.out.println("integer else uno");
-                        //System.out.println(varUnoType + " 1");
                         varUnoType = 0;
-                        //System.out.println(varUnoType + "2");
                     }
                 }
                 if(varDosType == -1){
@@ -175,14 +164,9 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
                     }else if (varDosComp.equals("true") || varDosComp.equals("false")){
                         varDosType = 3;
                     }else {
-                        //System.out.println("integer else dos");
-                        //System.out.println(varDosType + "ty");
                         varDosType = 0;
-                        //System.out.println(varDosType + "adsf");
                     }
                 }
-                //System.out.println(varUnoType);
-                //System.out.println(varDosType);
 
 
                 if (varUnoType != varDosType){
@@ -212,7 +196,6 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
             compare.add((String) visit(ele));
 
         }
-        //System.out.println(compare.size() + "size");
 
         if (compare.size() == 0){
             return null;
@@ -224,31 +207,115 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitAddExpreRule(parserInterprete.AddExpreRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        String result = (String) visit(ctx.multiplicationExpression());
-        visit(ctx.additionFactor());
-        return result;    }
+
+        String resultAdExp = (String) visit(ctx.multiplicationExpression());
+
+        if (visit(ctx.additionFactor()) != null){
+
+            ArrayList<String> compare = (ArrayList<String>) visit(ctx.additionFactor());
+            for (String value: compare) {
+                String varDosComp = value;
+                int lenResult =resultAdExp.length();
+                int lenVarDos =varDosComp.length();
+
+                String tempResult = resultAdExp.substring(1, lenResult);
+                String tempVarDos = varDosComp.substring(1,lenVarDos);
+
+                int varUnoType = this.tablaIDs.buscar(tempResult);
+                int varDosType = this.tablaIDs.buscar(tempVarDos);
+                if (varUnoType == -1){
+                    if (resultAdExp.contains("#")){
+                        String error = "El identificador " + "'" + tempResult +  "'" + " no ha sido declarado.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                        varUnoType = 2;
+                    }else if (resultAdExp.contains("*")){
+                        varUnoType = 1;
+                    }else if (resultAdExp.equals("true") || resultAdExp.equals("false")){
+                        varUnoType = 3;
+                    } else {
+                        varUnoType = 0;
+                    }
+                }
+                if(varDosType == -1){
+                    if (varDosComp.contains("#")){
+                        String error = "El identificador " + "'" + tempVarDos +  "'" + " no ha sido declarado.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                        varDosType = 2;
+                    }else if (varDosComp.contains("*")){
+                        varDosType = 1;
+                    }else if (varDosComp.equals("true") || varDosComp.equals("false")){
+                        varDosType = 3;
+                    }else {
+                        varDosType = 0;
+                    }
+                }
+
+
+                if (varUnoType != varDosType){
+                    if (resultAdExp.contains("#") || resultAdExp.contains("*")){
+                        resultAdExp = tempResult;
+                    }
+                    if (varDosComp.contains("#") || varDosComp.contains("*")){
+                        varDosComp = tempVarDos;
+                    }
+                    String error = "Error de tipos, en operacion "+ resultAdExp + ctx.children.get(1).getText();
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+
+                }
+            }
+
+        }
+
+        return resultAdExp;
+    }
 
     @Override
     public Object visitAddFactRule(parserInterprete.AddFactRuleContext ctx) {
-       // System.out.println(ctx.getClass().getName());
+
+        ArrayList<String> compare = new ArrayList<>();
         for(parserInterprete.MultiplicationExpressionContext ele : ctx.multiplicationExpression()){
-            visit(ele);
+            compare.add((String) visit(ele));
         }
-        return null;    }
+
+        if (compare.size() == 0){
+            return null;
+        }else {
+            return compare;
+        }
+    }
 
     @Override
     public Object visitMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
+        /*
         String result = (String) visit(ctx.elementExpression());
         visit(ctx.multiplicationFactor());
-        return result;    }
+        */
+
+
+
+        //return result;
+    }
 
     @Override
     public Object visitMultiFactRule(parserInterprete.MultiFactRuleContext ctx) {
        // System.out.println(ctx.getClass().getName());
+        ArrayList<String> compare = new ArrayList<>();
+        for(parserInterprete.ElementExpressionContext ele : ctx.elementExpression()){
+            compare.add((String) visit(ele));
+        }
+
+        if (compare.size() == 0){
+            return null;
+        }else {
+            return compare;
+        }
+
+        /*
         for (parserInterprete.ElementExpressionContext ele : ctx.elementExpression())
                 visit(ele);
-        return null;    }
+        */
+    }
 
     @Override
     public Object visitElemExpreRule(parserInterprete.ElemExpreRuleContext ctx) {
