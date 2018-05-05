@@ -370,24 +370,56 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitElemExpreRule(parserInterprete.ElemExpreRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
         String result = (String) visit(ctx.primitiveExpression());
-        if (ctx.callExpression() != null){
-            visit(ctx.callExpression());
-        }else if (ctx.elementAccess() != null){
-            visit(ctx.elementAccess());
+        int lenResult = result.length();
+        if (ctx.elementAccess()!= null){
+            System.out.println(tablaIDs.buscar(result.substring(1,lenResult)));
+            String resultelement = (String) visit(ctx.elementAccess());
+            if (resultelement != null){
+                if (tablaIDs.buscar(result.substring(1,lenResult)) != 6){
+                    if (tablaIDs.buscar(result.substring(1,lenResult)) == 2){
+                        String error = "Error, la variable '"+ result.substring(1,lenResult) +"' no es tipo array.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    }
+                    else if (tablaIDs.buscar(result.substring(1,lenResult)) == 8){
+                        String error = "Error, variable '"+ result.substring(1,lenResult) +"' de tipo funcion, no valida";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    }else {
+                        String error = "Error, el array '"+ result.substring(1,lenResult) +"' no a sido declarado o la expresion no es valida";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    }
+                }
+            }
+        }
+        if (ctx.callExpression()!= null){
+            String resultcall = (String) visit(ctx.callExpression());
+            if (resultcall != null){
+                if (tablaIDs.buscar(result.substring(1,lenResult)) != 8){
+                    if (tablaIDs.buscar(result.substring(1,lenResult)) == 2){
+                        String error = "Error, la variable '"+ result.substring(1,lenResult) +"' no es una funcion.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    }
+                    else if (tablaIDs.buscar(result.substring(1,lenResult)) == 6){
+                        String error = "Error, variable '"+ result.substring(1,lenResult) +"' de tipo array, no valida";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    }else {
+                        String error = "Error, la funcion '"+ result.substring(1,lenResult) +"' no a sido declarada o la expresion no es valida";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    }
+                }
+            }
         }
         return result;    }
 
     @Override
     public Object visitElemAccesRule(parserInterprete.ElemAccesRuleContext ctx) {
        // System.out.println(ctx.getClass().getName());
-        System.out.println(visit(ctx.expression()));
-        return null;    }
+        return visit(ctx.expression());    }
 
     @Override
     public Object visitCallExpreRule(parserInterprete.CallExpreRuleContext ctx) {
        // System.out.println(ctx.getClass().getName());
-        visit(ctx.expressionList());
-        return null;    }
+        return visit(ctx.expressionList());
+    }
 
     @Override
     public Object visitPrimiExpreInt(parserInterprete.PrimiExpreIntContext ctx) {
@@ -572,7 +604,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         }
         visit(ctx.moreExpressions());
 
-        return null;    }
+        return result;    }
 
     @Override
     public Object visitExpreListEOF(parserInterprete.ExpreListEOFContext ctx) {
@@ -584,7 +616,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         //System.out.println(ctx.getClass().getName());
         for(parserInterprete.ExpressionContext ele :ctx.expression() ){
             String result = (String) visit(ele);
-            System.out.println(result);
+           // System.out.println(result);
             if (result != null){
                 if (result.equals("ExpresExpres")){
                     String error = "Error, no se permiten expresiones de tipo () en colecciones de datos,ni como parametros en funciones."; //+ ctx.getParent().getChild(0) + ctx.getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getText()+ ctx.getParent().getChild(2) ;
