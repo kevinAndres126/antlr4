@@ -116,6 +116,17 @@ public class SymbolTable {
             return -1;
         }
 
+        public String buscarValor(String nombre)
+        {
+            for(Ident id : this.tabla)
+            {
+                if (id.tok.getText().equals(nombre)) {
+                    return id.value;
+                }
+            }
+            return "variable vacia";
+        }
+
         public void imprimir() {
             System.out.println("****** ESTADO DE TABLA DE SÍMBOLOS ******");
             if (!this.tabla.isEmpty()) {

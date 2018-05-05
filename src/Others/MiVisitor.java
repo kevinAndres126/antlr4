@@ -107,7 +107,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),0,ctx,tipo);
         }
 
-        //this.tablaIDs.imprimir();
+        this.tablaIDs.imprimir();
         //System.out.println(tipo);
         return null;    }
 
@@ -287,11 +287,8 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitMultiExpresRule(parserInterprete.MultiExpresRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        /*
-        String result = (String) visit(ctx.elementExpression());
-        visit(ctx.multiplicationFactor());
-        */
         String resultAdExp = (String) visit(ctx.elementExpression());
+
 
         if (visit(ctx.multiplicationFactor()) != null){
 
@@ -333,27 +330,24 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
                     }
                 }
 
-
+                if (resultAdExp.contains("#") || resultAdExp.contains("*")){
+                    resultAdExp = tempResult;
+                }
+                if (varDosComp.contains("#") || varDosComp.contains("*")) {
+                    varDosComp = tempVarDos;
+                }
+                System.out.println(ctx.multiplicationFactor().getChild(0).getText());
+                if ((varDosType == 0 && varDosComp.equals("0") || varDosType == 0 && tablaIDs.buscarValor(tempVarDos).equals("0")) && ctx.multiplicationFactor().getChild(0).getText().equals("/")){
+                    String error = "Operacion invalida,Division por cero en operacion "+ resultAdExp + ctx.children.get(1).getText();
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                }
                 if (varUnoType != varDosType){
-                    if (resultAdExp.contains("#") || resultAdExp.contains("*")){
-                        resultAdExp = tempResult;
-                    }
-                    if (varDosComp.contains("#") || varDosComp.contains("*")){
-                        varDosComp = tempVarDos;
-                    }
                     String error = "Error de tipos, en operacion "+ resultAdExp + ctx.children.get(1).getText();
                     ThrowingErrorListener.INSTANCE.setErrorMessages(error);
-
                 }
             }
-
         }
-
         return resultAdExp;
-
-
-
-        //return result;
     }
 
     @Override
@@ -370,10 +364,6 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
             return compare;
         }
 
-        /*
-        for (parserInterprete.ElementExpressionContext ele : ctx.elementExpression())
-                visit(ele);
-        */
     }
 
     @Override
