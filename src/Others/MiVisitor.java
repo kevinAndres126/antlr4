@@ -291,6 +291,65 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         String result = (String) visit(ctx.elementExpression());
         visit(ctx.multiplicationFactor());
         */
+        String resultAdExp = (String) visit(ctx.elementExpression());
+
+        if (visit(ctx.multiplicationFactor()) != null){
+
+            ArrayList<String> compare = (ArrayList<String>) visit(ctx.multiplicationFactor());
+            for (String value: compare) {
+                String varDosComp = value;
+                int lenResult =resultAdExp.length();
+                int lenVarDos =varDosComp.length();
+
+                String tempResult = resultAdExp.substring(1, lenResult);
+                String tempVarDos = varDosComp.substring(1,lenVarDos);
+
+                int varUnoType = this.tablaIDs.buscar(tempResult);
+                int varDosType = this.tablaIDs.buscar(tempVarDos);
+                if (varUnoType == -1){
+                    if (resultAdExp.contains("#")){
+                        String error = "El identificador " + "'" + tempResult +  "'" + " no ha sido declarado.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                        varUnoType = 2;
+                    }else if (resultAdExp.contains("*")){
+                        varUnoType = 1;
+                    }else if (resultAdExp.equals("true") || resultAdExp.equals("false")){
+                        varUnoType = 3;
+                    } else {
+                        varUnoType = 0;
+                    }
+                }
+                if(varDosType == -1){
+                    if (varDosComp.contains("#")){
+                        String error = "El identificador " + "'" + tempVarDos +  "'" + " no ha sido declarado.";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                        varDosType = 2;
+                    }else if (varDosComp.contains("*")){
+                        varDosType = 1;
+                    }else if (varDosComp.equals("true") || varDosComp.equals("false")){
+                        varDosType = 3;
+                    }else {
+                        varDosType = 0;
+                    }
+                }
+
+
+                if (varUnoType != varDosType){
+                    if (resultAdExp.contains("#") || resultAdExp.contains("*")){
+                        resultAdExp = tempResult;
+                    }
+                    if (varDosComp.contains("#") || varDosComp.contains("*")){
+                        varDosComp = tempVarDos;
+                    }
+                    String error = "Error de tipos, en operacion "+ resultAdExp + ctx.children.get(1).getText();
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+
+                }
+            }
+
+        }
+
+        return resultAdExp;
 
 
 
