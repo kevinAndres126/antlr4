@@ -41,6 +41,7 @@ multiplicationFactor    :((MUL|DIV) elementExpression)*                         
 
 elementExpression   :primitiveExpression (elementAccess|callExpression | )    #elemExpreRule
                     ;
+                    ///validar primitive expresion cuando elementAccess o callExpresion sea diferente de null
 
 elementAccess   :CORCHETEIZQ expression CORCHETEDER                             #elemAccesRule
                 ;

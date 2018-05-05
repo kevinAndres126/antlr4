@@ -107,7 +107,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),0,ctx,tipo);
         }
 
-        this.tablaIDs.imprimir();
+        //this.tablaIDs.imprimir();
         //System.out.println(tipo);
         return null;    }
 
@@ -380,7 +380,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitElemAccesRule(parserInterprete.ElemAccesRuleContext ctx) {
        // System.out.println(ctx.getClass().getName());
-        visit(ctx.expression());
+        System.out.println(visit(ctx.expression()));
         return null;    }
 
     @Override
@@ -555,8 +555,23 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitExpreListExpre(parserInterprete.ExpreListExpreContext ctx) {
         //System.out.println(ctx.getClass().getName());
-        visit(ctx.expression());
+        String result = (String) visit(ctx.expression());
+        if (result != null){
+            if (result.equals("ExpresExpres")){
+                String error = "Error, no se permiten expresiones de tipo () en colecciones de datos,ni como parametros en funciones."; //+ ctx.getParent().getChild(0) + ctx.getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getText()+ ctx.getParent().getChild(2) ;
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+            if (result.equals("Print")){
+                String error = "Error, no se permiten expresiones de impresion en colecciones de datos, ni como parametros en funciones. "; //+ ctx.getParent().getChild(0)+ctx.getParent().getChild(1)+ctx.getChild(0).getChild(0).getChild(0).getChild(0).getText()+ctx.getParent().getChild(3) ;
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+            if (result.equals("IFExprs")){
+                String error = "Error, no se permiten expresiones IF como parametros, ni en colecciones de datos.";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+        }
         visit(ctx.moreExpressions());
+
         return null;    }
 
     @Override
@@ -568,7 +583,23 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitMoreExpreRule(parserInterprete.MoreExpreRuleContext ctx) {
         //System.out.println(ctx.getClass().getName());
         for(parserInterprete.ExpressionContext ele :ctx.expression() ){
-            visit(ele);}
+            String result = (String) visit(ele);
+            System.out.println(result);
+            if (result != null){
+                if (result.equals("ExpresExpres")){
+                    String error = "Error, no se permiten expresiones de tipo () en colecciones de datos,ni como parametros en funciones."; //+ ctx.getParent().getChild(0) + ctx.getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getText()+ ctx.getParent().getChild(2) ;
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                }
+                if (result.equals("Print")){
+                    String error = "Error, no se permiten expresiones de impresion en colecciones de datos, ni como parametros en funciones. "; //+ ctx.getParent().getChild(0)+ctx.getParent().getChild(1)+ctx.getChild(0).getChild(0).getChild(0).getChild(0).getText()+ctx.getParent().getChild(3) ;
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                }
+                if (result.equals("IFExprs")){
+                    String error = "Error, no se permiten expresiones IF como parametros, ni en colecciones de datos.";
+                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                }
+            }
+        }
         return null;    }
 
     @Override
