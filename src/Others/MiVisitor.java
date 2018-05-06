@@ -46,7 +46,6 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         for(parserInterprete.StatementContext ele : ctx.statement()){
             visit(ele);
         }
-        this.tablaIDs.imprimir();
         this.tablaIDs.closeScope();
         return null;
     }
@@ -84,7 +83,6 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         }
         else if (tipo.equals("neutral")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),8,ctx,tipo,tempArray);
-
         }
         else if (tipo.equals("ExpreHash")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),9,ctx,tipo,tempArray);
@@ -648,7 +646,6 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
             }
             for (String parametro: parametros
                     ) {
-                System.out.println(parametro);
                 if (parametro.contains("#")){
                     if (!tablaIDs.buscarTrueFalse(parametro.substring(1,parametro.length()))){
                         String error = "Error, el parametro '"+ parametro.substring(1,parametro.length()) +"' no a sido declarado";
@@ -702,12 +699,40 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitPrintExpreRule(parserInterprete.PrintExpreRuleContext ctx) {
-        visit(ctx.expression());
+        ArrayList<String> temp = (ArrayList<String>) visit(ctx.expression());
+        String result = temp.get(0);
+        if (result.contains("#")){
+            System.out.println(tablaIDs.buscar(result.substring(1,result.length())));
+            if (!(tablaIDs.buscar(result.substring(1,result.length())) == 1 ||tablaIDs.buscar(result.substring(1,result.length())) == 3||tablaIDs.buscar(result.substring(1,result.length())) == 0||
+                    tablaIDs.buscar(result.substring(1,result.length())) == 6||tablaIDs.buscar(result.substring(1,result.length())) == 8||tablaIDs.buscar(result.substring(1,result.length())) == 9)){
+                String error = "Error, el indice '"+result.substring(1,result.length())+"' es de tipo invalido";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+        }
+        if (result.equals("ExpresExpres") || result.equals("ArrayFuntion") || result.equals("IFExprs")|| result.equals("Print")){
+            String error = "Error,El tipo '"+result+"' no puede se puede imprimir";
+            ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+        }
         return null;    }
 
     @Override
     public Object visitIfExpreRule(parserInterprete.IfExpreRuleContext ctx) {
-        visit(ctx.expression());
+        ArrayList<String> temp = (ArrayList<String>) visit(ctx.expression());
+        String result = temp.get(0);
+        if (result.contains("#")){
+            if (!(tablaIDs.buscar(result.substring(1,result.length())) == 5)){
+                String error = "Error, El tipo '"+result.substring(1,result.length())+"' no es valido en la expresion If";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+        }
+        if (result.equals("ArrayFuntion") || result.equals("IFExprs")|| result.equals("Print")|| result.equals("ExpreHash")|| result.equals("ArrayLiteral")|| result.contains("*")
+                || result.equals("true")|| result.equals("false")||result.equals("neutral")){
+            String error = "Error,El tipo '"+result+"' no puede ser implementado en un If";
+            ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+        }
+
+
+
         this.tablaIDs.openScope();
         for(parserInterprete.BlockStatementContext ele :ctx.blockStatement() ){
             visit(ele);
