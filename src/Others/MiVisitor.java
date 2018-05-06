@@ -69,10 +69,9 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitStateletRule(parserInterprete.StateletRuleContext ctx) {
         ArrayList<String> tempArray = (ArrayList<String>) visit(ctx.expression());
-        System.out.println(tempArray);
         String tipo = tempArray.get(0);
         tempArray.remove(0) ;
-        System.out.println(tempArray);
+
 
         if (tipo.equals("ExpresExpres")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),5,ctx,tipo,tempArray);
