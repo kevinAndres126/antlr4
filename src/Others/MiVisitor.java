@@ -29,6 +29,7 @@ import java.util.List;
 
 
 public class MiVisitor extends parserInterpreteBaseVisitor {
+    private int esFuncion = 0;
     private ArrayList<String> parametros;
     private String funcionActual= "";
     private SymbolTable tablaIDs;
@@ -45,6 +46,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         for(parserInterprete.StatementContext ele : ctx.statement()){
             visit(ele);
         }
+        this.tablaIDs.imprimir();
         this.tablaIDs.closeScope();
         return null;
     }
@@ -83,6 +85,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         }
         else if (tipo.equals("neutral")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),8,ctx,tipo,tempArray);
+
         }
         else if (tipo.equals("ExpreHash")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),9,ctx,tipo,tempArray);
@@ -488,11 +491,13 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx) {
+
         ArrayList<String> temp = new ArrayList<>();
         temp.add("neutral");
         temp.addAll((ArrayList<String>) visit(ctx.functionLiteral()));
 
         return temp;    }
+
 
     @Override
     public Object visitPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx) {
@@ -549,9 +554,17 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx) {
         ArrayList<String> parameters = (ArrayList<String>) visit(ctx.functionParameters());
         this.tablaIDs.openScope();
-        visit(ctx.blockStatement());
+
+        if(ctx.functionParameters() != null)
+            visit(ctx.functionParameters());
+
+        esFuncion = 1;
+
+        String result = (String) visit(ctx.blockStatement());
+        this.tablaIDs.imprimir();
         this.tablaIDs.closeScope();
         return parameters;
+
     }
 
     //Funciones y parametros, se usa lista para validar
@@ -683,6 +696,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitBlockStatRule(parserInterprete.BlockStatRuleContext ctx) {
+
         tablaIDs.openScope();
         for(parserInterprete.StatementContext ele :ctx.statement() ){
             visit(ele);
