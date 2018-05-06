@@ -28,6 +28,7 @@ import java.util.List;
 
 
 public class MiVisitor extends parserInterpreteBaseVisitor {
+    private int esFuncion = 0;
     private ArrayList<String> parametros;
     private SymbolTable tablaIDs;
 
@@ -43,6 +44,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         for(parserInterprete.StatementContext ele : ctx.statement()){
             visit(ele);
         }
+        this.tablaIDs.imprimir();
         this.tablaIDs.closeScope();
         return null;
     }
@@ -79,8 +81,14 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         else if (tipo.equals("ArrayFuntion")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),7,ctx,tipo);
         }
-        else if (tipo.equals("neutral")){
-            this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),8,ctx,tipo);
+        else if(tipo.equals("fnReturn") || tipo.equals("fnNoReturn")){
+            if(tipo.equals("fnReturn")){
+                this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),-1,ctx,tipo);
+            }
+            if(tipo.equals("fnNoReturn")){
+                this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),8,ctx,tipo);
+                esFuncion = 0;
+            }
         }
         else if (tipo.equals("ExpreHash")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),9,ctx,tipo);
@@ -475,8 +483,8 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitPrimiExpreFuntionLiteral(parserInterprete.PrimiExpreFuntionLiteralContext ctx) {
         //System.out.println(ctx.getClass().getName());
         //Declaraciones de Metodos
-        visit(ctx.functionLiteral());
-        return "neutral";    }
+
+        return visit(ctx.functionLiteral());    }
 
     @Override
     public Object visitPrimiExpreHash(parserInterprete.PrimiExpreHashContext ctx) {
@@ -534,11 +542,22 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitFunLiteralRule(parserInterprete.FunLiteralRuleContext ctx) {
-        //System.out.println(ctx.getClass().getName());
-        visit(ctx.functionParameters());
         this.tablaIDs.openScope();
-        visit(ctx.blockStatement());
+
+        if(ctx.functionParameters() != null)
+            visit(ctx.functionParameters());
+
+        esFuncion = 1;
+
+        String result = (String) visit(ctx.blockStatement());
+        this.tablaIDs.imprimir();
         this.tablaIDs.closeScope();
+
+        if(result.equals("1"))
+            return "fnReturn";
+        if(result.equals("0"))
+            return "fnNoReturn";
+
         return null;
     }
 
@@ -653,9 +672,40 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitBlockStatRule(parserInterprete.BlockStatRuleContext ctx) {
-        //System.out.println(ctx.getClass().getName());
-        for(parserInterprete.StatementContext ele :ctx.statement() ){
-            visit(ele);
+        int functionReturn = 0;
+
+        for(parserInterprete.StatementContext ele : ctx.statement()){
+
+            String respuesta = ele.getChild(0).getText();
+
+            if(esFuncion == 1) {
+                if (respuesta.equals("return")) {
+                    esFuncion = 0;
+                    visit(ele);
+                    esFuncion = 1;
+                    functionReturn = 1;
+                }
+                else { //si no encuentra un return
+                    esFuncion = 0;
+                    visit(ele);
+                    esFuncion = 1;
+                }
+            }
+
+            if(esFuncion == 0){ //bloque de if o else
+                respuesta = ele.getChild(0).getText();
+                System.out.println("No se encuentra en una funcion " + respuesta);
+            }
+
         }
-        return null;    }
+
+        if (esFuncion == 1) {
+
+            return String.valueOf(functionReturn);
+
+        } else {
+            return null;
+
+        }
+    }
 }
