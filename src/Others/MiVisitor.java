@@ -608,19 +608,20 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         result = resulttemp.get(0);
 
         ArrayList<String> parametros = new ArrayList<>();
-        parametros.add(result);
         if (result != null){
             if (result.equals("ExpresExpres")){
                 String error = "Error, no se permiten expresiones de tipo () en colecciones de datos,ni como parametros en funciones."; //+ ctx.getParent().getChild(0) + ctx.getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getText()+ ctx.getParent().getChild(2) ;
                 ThrowingErrorListener.INSTANCE.setErrorMessages(error);
             }
-            if (result.equals("Print")){
+            else if (result.equals("Print")){
                 String error = "Error, no se permiten expresiones de impresion en colecciones de datos, ni como parametros en funciones. "; //+ ctx.getParent().getChild(0)+ctx.getParent().getChild(1)+ctx.getChild(0).getChild(0).getChild(0).getChild(0).getText()+ctx.getParent().getChild(3) ;
                 ThrowingErrorListener.INSTANCE.setErrorMessages(error);
             }
-            if (result.equals("IFExprs")){
+            else if (result.equals("IFExprs")){
                 String error = "Error, no se permiten expresiones IF como parametros, ni en colecciones de datos.";
                 ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }else {
+                parametros.add(result);
             }
         }
         if("G4.parserInterprete$CallExpreRuleContext".equals(ctx.getParent().getClass().getName())){
@@ -630,10 +631,14 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
             }
             for (String parametro: parametros
                     ) {
-                if (!tablaIDs.buscarTrueFalse(parametro.substring(1,parametro.length()))){
-                    String error = "Error, el parametro '"+ parametro.substring(1,parametro.length()) +"' no a sido declarado";
-                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                System.out.println(parametro);
+                if (parametro.contains("#")){
+                    if (!tablaIDs.buscarTrueFalse(parametro.substring(1,parametro.length()))){
+                        String error = "Error, el parametro '"+ parametro.substring(1,parametro.length()) +"' no a sido declarado";
+                        ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    }
                 }
+
             }
         }
 
