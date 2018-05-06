@@ -376,7 +376,11 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         int lenResult = result.length();
 
         if (ctx.elementAccess()!= null){
-            String resultelement = (String) visit(ctx.elementAccess());
+            String resulttempElemt;
+            ArrayList<String> resulttempArray = (ArrayList<String>) visit(ctx.elementAccess());
+            resulttempElemt = resulttempArray.get(0);
+
+            String resultelement = resulttempElemt;
             if (resultelement != null){
                 if (tablaIDs.buscar(result.substring(1,lenResult)) != 6){
                     if (tablaIDs.buscar(result.substring(1,lenResult)) == 2){
@@ -429,7 +433,20 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitElemAccesRule(parserInterprete.ElemAccesRuleContext ctx) {
-        return visit(ctx.expression());    }
+        ArrayList<String> temp = (ArrayList<String>) visit(ctx.expression());
+        String result = temp.get(0);
+        if (result.contains("#") || result.contains("*")){
+            if (tablaIDs.buscar(result.substring(1,result.length())) != 0){
+                String error = "Error, el indice '"+result.substring(1,result.length())+"' es de tipo invalido";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+        }
+        if (result.equals("true") || result.equals("false") || result.equals("ExpresExpres") || result.equals("ArrayLiteral") || result.equals("ArrayFuntion") || result.equals("ExpreHash") || result.equals("Print") || result.equals("IFExprs")){
+            String error = "Error,El tipo '"+result+"' no puede ser un indice";
+            ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+        }
+
+        return temp ;    }
 
     @Override
     public Object visitCallExpreRule(parserInterprete.CallExpreRuleContext ctx) {
