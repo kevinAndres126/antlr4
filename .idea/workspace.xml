@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97a0c4a8-2927-4989-9409-ad7c481d6b8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/prograAntrl4/Others/MiVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.~lock.Monkey_EBNF_Grammar3.docx#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Others/MiVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Others/MiVisitor.java" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +19,7 @@
       <file leaf-file-name="GUIMonkey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="15">
               <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -29,53 +32,35 @@
       <file leaf-file-name="parserInterprete.g4" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="99" column="37" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="37" />
+            <state relative-caret-position="660">
+              <caret line="44" column="39" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lexerInterprete.tokens" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/G4/lexerInterprete.tokens">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="lexerInterprete.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/G4/lexerInterprete.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MiVisitor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MiVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="727" column="178" selection-start-line="727" selection-start-column="178" selection-end-line="727" selection-end-column="178" />
+            <state relative-caret-position="225">
+              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#18049#18050#0" expanded="true" />
-                <element signature="e#18099#18100#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="90" column="38" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="38" />
+            <state relative-caret-position="243">
+              <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1087#1088#0" expanded="true" />
                 <element signature="e#1132#1133#0" expanded="true" />
                 <element signature="e#1195#1196#0" expanded="true" />
                 <element signature="e#1247#1248#0" expanded="true" />
-                <element signature="e#6033#6034#0" expanded="true" />
-                <element signature="e#6074#6075#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,14 +88,27 @@
       </list>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1841" />
+    <option name="y" value="27" />
+    <option name="width" value="1221" />
+    <option name="height" value="511" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,7 +150,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="RecentsManager">
@@ -173,7 +170,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="MAin" type="Application" factoryName="Application">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="prograAntrl4" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -225,7 +222,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e284d81d-45fa-40ff-8af4-9995d1e098d0" name="Default" comment="" />
+      <changelist id="97a0c4a8-2927-4989-9409-ad7c481d6b8d" name="Default" comment="" />
       <created>1520388345053</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -245,13 +242,13 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3283046" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32799146" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.62004405" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294509" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32929516" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16399573" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16559829" />
       <window_info anchor="bottom" id="ANTLR Preview" order="9" weight="0.43555555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24962063" />
@@ -275,6 +272,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="86" column="24" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -431,32 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/G4/lexerInterprete.tokens">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="90" column="38" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#6033#6034#0" expanded="true" />
-            <element signature="e#6074#6075#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="99" column="37" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/G4/lexerInterprete.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -466,7 +444,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/generated/GUIMonkey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="15">
           <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -477,12 +455,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Others/MiVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="727" column="178" selection-start-line="727" selection-start-column="178" selection-end-line="727" selection-end-column="178" />
+        <state relative-caret-position="225">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#18049#18050#0" expanded="true" />
-            <element signature="e#18099#18100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/G4/parserInterprete.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Others/SymbolTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1247#1248#0" expanded="true" />
           </folding>
         </state>
       </provider>

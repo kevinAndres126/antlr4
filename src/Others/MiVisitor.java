@@ -605,8 +605,47 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitHashContRule(parserInterprete.HashContRuleContext ctx) {
-        visit(ctx.expression(0));
+        //validacion de key-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        String resultKey;
+        ArrayList<String> resultTempKey = (ArrayList<String>) visit(ctx.expression(0));
+        resultKey = resultTempKey.get(0);
+        if (resultKey.contains("#")){
+            if (!(tablaIDs.buscar(resultKey.substring(1,resultKey.length())) == 0||tablaIDs.buscar(resultKey.substring(1,resultKey.length())) == 1||
+                    tablaIDs.buscar(resultKey.substring(1,resultKey.length())) == 8)){
+                String error = "Error, El tipo de la variable '"+resultKey.substring(1,resultKey.length())+"' no es valida en la expresion hash";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+        }
+        if (resultKey.equals("ArrayFuntion") || resultKey.equals("IFExprs")|| resultKey.equals("Print")|| resultKey.equals("ArrayLiteral")
+                || resultKey.equals("true")|| resultKey.equals("false")||resultKey.equals("ExpresExpres")|| resultKey.equals("ExpreHash")){
+            String error = "Error,El tipo '"+resultKey+"' no puede ser implementado en un hash key";
+            ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        //validacion de value+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        String resultValue;
+        ArrayList<String> resultTempValue = (ArrayList<String>) visit(ctx.expression(1));
+        resultValue = resultTempValue.get(0);
         visit(ctx.expression(1));
+        if (resultValue.contains("#")){
+            if (!(tablaIDs.buscar(resultValue.substring(1,resultValue.length())) == 0||tablaIDs.buscar(resultValue.substring(1,resultValue.length())) == 1||
+                    tablaIDs.buscar(resultValue.substring(1,resultValue.length())) == 8||tablaIDs.buscar(resultValue.substring(1,resultValue.length())) == 9||
+            tablaIDs.buscar(resultValue.substring(1,resultValue.length())) == 3 ||tablaIDs.buscar(resultValue.substring(1,resultValue.length())) == 6)){
+                String error = "Error, El tipo de la variable '"+resultValue.substring(1,resultValue.length())+"' no es valida en la expresion hash";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+        }
+        if (resultValue.equals("ArrayFuntion") || resultValue.equals("IFExprs")|| resultValue.equals("Print")
+                ||resultValue.equals("ExpresExpres")){
+            String error = "Error,El tipo '"+resultValue+"' no puede ser implementado en un hash value";
+            ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+        }
+
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         return null;    }
 
     @Override
