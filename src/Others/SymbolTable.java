@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import Others.ThrowingErrorListener;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class SymbolTable {
@@ -17,13 +18,23 @@ public class SymbolTable {
             int type; //forma simple de identificar un tipo del lenguaje [0--> Entero] NO ES TAN CECESARIO EN ESTE LENGUAJE ALPHA PUESTO QUE SOLO ACEPTA NUMEROS
             ParserRuleContext decl; //por si fuera necesario saber más acerca del contexto del identificador en el árbol
             String value;
+            ArrayList<String> arrays;
 
-            public Ident(int n, Token t, int ty, ParserRuleContext d,String v) {
+            public Ident(int n, Token t, int ty, ParserRuleContext d,String v, ArrayList<String> aL) {
                 nivel = n;
                 tok = t;
                 type = ty;
                 decl = d;
                 value = v;
+                arrays = aL;
+            }
+
+            public ArrayList<String> getArrays() {
+                return arrays;
+            }
+
+            public void setArrays(ArrayList<String> arrays) {
+                this.arrays = arrays;
             }
 
             public int getNivel() {
@@ -53,10 +64,10 @@ public class SymbolTable {
             this.tabla = new LinkedList<Ident>();
         }
 
-        public Ident insertar(String nombre, int tipo, ParserRuleContext declaracion, String v)
+        public Ident insertar(String nombre, int tipo, ParserRuleContext declaracion, String v,ArrayList<String> aL)
         {
             Token token = new CommonToken(0,nombre);
-            Ident i = new Ident(nivelActual,token,tipo,declaracion,v);
+            Ident i = new Ident(nivelActual,token,tipo,declaracion,v, aL);
             int j = 0;
             while (j < this.tabla.size() && this.tabla.get(j).nivel == nivelActual) {
                 if (this.tabla.get(j).tok.getText().equals(nombre)) {
@@ -71,9 +82,9 @@ public class SymbolTable {
             return this.tabla.get(0);
         }
 
-        public Ident insertar(Token token, int tipo, ParserRuleContext declaracion, String v)
+        public Ident insertar(Token token, int tipo, ParserRuleContext declaracion, String v,ArrayList<String> aL)
         {
-            Ident i = new Ident(nivelActual,token,tipo,declaracion, v);
+            Ident i = new Ident(nivelActual,token,tipo,declaracion, v,aL);
             int j = 0;
             while (j < this.tabla.size() && this.tabla.get(j).nivel == nivelActual) {
                 if (this.tabla.get(j).tok.getText().equals(token.getText())) {
@@ -116,6 +127,17 @@ public class SymbolTable {
             return -1;
         }
 
+        public boolean buscarTrueFalse(String nombre)
+        {
+            for(Ident id : this.tabla)
+            {
+                if (id.tok.getText().equals(nombre)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public String buscarValor(String nombre)
         {
             for(Ident id : this.tabla)
@@ -126,6 +148,16 @@ public class SymbolTable {
             }
             return "variable vacia";
         }
+        public ArrayList<String> getArrayList(String nombre)
+        {
+            for(Ident id : this.tabla)
+            {
+                if (id.tok.getText().equals(nombre)) {
+                    return id.arrays;
+                }
+            }
+            return null;
+        }
 
         public void imprimir() {
             System.out.println("****** ESTADO DE TABLA DE SÍMBOLOS ******");
@@ -135,7 +167,7 @@ public class SymbolTable {
                     for (int j = 0; j < i.nivel; j++) {
                         nivel += "\t";
                     }*/
-                    System.out.println(/*nivel + */"Nombre: " + i.tok.getText() + " -> Nivel: " + i.nivel + " -> Tipo: " +i.type + " -> Valor: "+ i.value);
+                    System.out.println(/*nivel + */"Nombre: " + i.tok.getText() + " -> Nivel: " + i.nivel + " -> Tipo: " +i.type + " -> Valor: "+ i.value + "-> Arrays:" + i.arrays);
                 }
                 System.out.println("------------------------------------------");
             }
