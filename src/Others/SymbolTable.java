@@ -49,6 +49,26 @@ public class SymbolTable {
                 return type;
             }
 
+            public void setNivel(int nivel) {
+                this.nivel = nivel;
+            }
+
+            public void setTok(Token tok) {
+                this.tok = tok;
+            }
+
+            public void setType(int type) {
+                this.type = type;
+            }
+
+            public void setDecl(ParserRuleContext decl) {
+                this.decl = decl;
+            }
+
+            public void setValue(String value) {
+                this.value = value;
+            }
+
             public ParserRuleContext getDecl() {
                 return decl;
             }
@@ -71,8 +91,15 @@ public class SymbolTable {
             int j = 0;
             while (j < this.tabla.size() && this.tabla.get(j).nivel == nivelActual) {
                 if (this.tabla.get(j).tok.getText().equals(nombre)) {
-                    String error = "El identificador \"" + nombre + "\" ya ha sido declarado.";
-                    ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+                    this.tabla.get(j).setDecl(declaracion);
+                    this.tabla.get(j).setNivel(nivelActual);
+                    this.tabla.get(j).setTok(token);
+                    this.tabla.get(j).setArrays(aL);
+                    this.tabla.get(j).setType(tipo);
+                    this.tabla.get(j).setValue(v);
+
+                    //String error = "El identificador \"" + nombre + "\" ya ha sido declarado.";
+                    //ThrowingErrorListener.INSTANCE.setErrorMessages(error);
                     //System.out.println("El identificador \"" + nombre + "\" ya ha sido declarado.");
                     return null;
                 }
@@ -81,7 +108,7 @@ public class SymbolTable {
             this.tabla.push(i); //deben ser una tabla estilo pila
             return this.tabla.get(0);
         }
-
+/*
         public Ident insertar(Token token, int tipo, ParserRuleContext declaracion, String v,ArrayList<String> aL)
         {
             Ident i = new Ident(nivelActual,token,tipo,declaracion, v,aL);
@@ -99,7 +126,7 @@ public class SymbolTable {
             return this.tabla.get(0);
 
         }
-
+*/
         public void openScope(){
             this.nivelActual++;
         }

@@ -30,6 +30,7 @@ import java.util.List;
 
 public class MiVisitor extends parserInterpreteBaseVisitor {
     private int esFuncion = 0;
+    private String returnActual;
     private ArrayList<String> parametros;
     private String funcionActual= "";
     private SymbolTable tablaIDs;
@@ -53,11 +54,17 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     @Override
     public Object visitStatelet(parserInterprete.StateletContext ctx) {
         visit(ctx.letStatement());
-        return null;    }
+        return  null;    }
 
     @Override
     public Object visitStatereturn(parserInterprete.StatereturnContext ctx) {
-        visit(ctx.returnStatement());
+        String result = (String) visit(ctx.returnStatement());
+
+        if (!(ctx.getParent().getClass().getName().equals("G4.parserInterprete$BlockStatRuleContext"))) {
+            String error = "Error en linea " + ctx.RETURN().getSymbol().getLine() + ":" + ctx.RETURN().getSymbol().getCharPositionInLine() + ".El return solo puede ser implementado dentro de una funcion";
+            ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+        }
+        this.returnActual = result;
         return null;    }
 
     @Override
@@ -83,6 +90,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         }
         else if (tipo.equals("neutral")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),8,ctx,tipo,tempArray);
+            //System.out.println(returnActual);
         }
         else if (tipo.equals("ExpreHash")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),9,ctx,tipo,tempArray);
@@ -113,8 +121,20 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
     @Override
     public Object visitStatereturnRule(parserInterprete.StatereturnRuleContext ctx) {
-        visit(ctx.expression());
-        return null;    }
+        ArrayList<String> temp = (ArrayList<String>) visit(ctx.expression());
+        String result = temp.get(0);
+        if (result.contains("#")){
+            if (!(tablaIDs.buscar(result.substring(1,result.length())) == 1 ||tablaIDs.buscar(result.substring(1,result.length())) == 3||tablaIDs.buscar(result.substring(1,result.length())) == 0||
+                    tablaIDs.buscar(result.substring(1,result.length())) == 6||tablaIDs.buscar(result.substring(1,result.length())) == 8||tablaIDs.buscar(result.substring(1,result.length())) == 9)){
+                String error = "Error, el valor '"+result.substring(1,result.length())+"' es de tipo invalido";
+                ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+            }
+        }
+        if (result.equals("ExpresExpres") || result.equals("ArrayFuntion") || result.equals("IFExprs")|| result.equals("Print")){
+            String error = "Error,El tipo '"+result+"' no puede se puede imprimir";
+            ThrowingErrorListener.INSTANCE.setErrorMessages(error);
+        }
+        return result;    }
 
     @Override
     public Object visitStateexpreRule(parserInterprete.StateexpreRuleContext ctx) {
@@ -575,7 +595,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         esFuncion = 1;
 
         String result = (String) visit(ctx.blockStatement());
-        this.tablaIDs.imprimir();
+       // this.tablaIDs.imprimir();
         this.tablaIDs.closeScope();
         return parameters;
 
@@ -741,7 +761,6 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         ArrayList<String> temp = (ArrayList<String>) visit(ctx.expression());
         String result = temp.get(0);
         if (result.contains("#")){
-            System.out.println(tablaIDs.buscar(result.substring(1,result.length())));
             if (!(tablaIDs.buscar(result.substring(1,result.length())) == 1 ||tablaIDs.buscar(result.substring(1,result.length())) == 3||tablaIDs.buscar(result.substring(1,result.length())) == 0||
                     tablaIDs.buscar(result.substring(1,result.length())) == 6||tablaIDs.buscar(result.substring(1,result.length())) == 8||tablaIDs.buscar(result.substring(1,result.length())) == 9)){
                 String error = "Error, el indice '"+result.substring(1,result.length())+"' es de tipo invalido";
