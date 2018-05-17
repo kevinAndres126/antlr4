@@ -101,12 +101,12 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
         else if (tipo.equals("IFExprs")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),11,ctx,tipo,tempArray);
         }
-        else if (tipo.equals("true")){
+        else if (tipo.equals("true") || tipo.equals("false")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),3,ctx,tipo,tempArray);
         }
-        else if (tipo.equals("false")){
+        /*else if (tipo.equals("false")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),3,ctx,tipo,tempArray);
-        }
+        }*/
         else if (tipo.contains("#")){
             this.tablaIDs.insertar(ctx.ID().getSymbol().getText(),2,ctx,tipo.substring(1,tipo.length()),tempArray);
         }
@@ -145,13 +145,13 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
     public Object visitExpreRule(parserInterprete.ExpreRuleContext ctx) {
 
         String resultAdExp;
-        ArrayList<String> resulttemp = (ArrayList<String>) visit(ctx.additionExpression());
-        resultAdExp = resulttemp.get(0);
+        ArrayList<String> resultTemp = (ArrayList<String>) visit(ctx.additionExpression());
+        resultAdExp = resultTemp.get(0);
 
         if (visit(ctx.comparison()) != null){
 
             ArrayList<String> compare = (ArrayList<String>) visit(ctx.comparison());
-            for (String value: compare) {
+            for (String value : compare) {
                 String varDosComp = value;
                 int lenResult =resultAdExp.length();
                 int lenVarDos =varDosComp.length();
@@ -201,7 +201,7 @@ public class MiVisitor extends parserInterpreteBaseVisitor {
 
         }
 
-        return resulttemp;
+        return resultTemp;
     }
 
     @Override

@@ -15,7 +15,7 @@ public class SymbolTable {
         public class Ident{
             int nivel;
             Token tok;
-            int type; //forma simple de identificar un tipo del lenguaje [0--> Entero] NO ES TAN CECESARIO EN ESTE LENGUAJE ALPHA PUESTO QUE SOLO ACEPTA NUMEROS
+            int type; //forma simple de identificar un tipo del lenguaje
             ParserRuleContext decl; //por si fuera necesario saber más acerca del contexto del identificador en el árbol
             String value;
             ArrayList<String> arrays;
@@ -105,7 +105,7 @@ public class SymbolTable {
                 }
                 j++;
             }
-            this.tabla.push(i); //deben ser una tabla estilo pila
+            this.tabla.push(i); //debe ser una tabla estilo pila
             return this.tabla.get(0);
         }
 /*
@@ -127,6 +127,7 @@ public class SymbolTable {
 
         }
 */
+
         public void openScope(){
             this.nivelActual++;
         }
@@ -175,6 +176,7 @@ public class SymbolTable {
             }
             return "variable vacia";
         }
+
         public ArrayList<String> getArrayList(String nombre)
         {
             for(Ident id : this.tabla)
